@@ -37,10 +37,12 @@ namespace Calculator
                 string argument2 = GetArgument("Enter the second argument:");
                 ArgumentType argument2Type = GetArgumentType(argument2);
 
-               
+                
+                /*
                 Console.WriteLine($"Argument1 Type: {argument1Type}");
                 Console.WriteLine($"Argument2 Type: {argument2Type}");
                 Console.WriteLine($"OperatorType: {operatorType}");
+                */
 
                 if (argument1Type ==ArgumentType.Number && argument2Type == ArgumentType.Number)
                 {
@@ -185,7 +187,11 @@ namespace Calculator
             TimeSpan timespanArgument;
             DateTimeOffset dateTimeArgument;
             double numberArgument;
-            if (TimeSpan.TryParse(argument, out timespanArgument))
+            if (double.TryParse(argument, out numberArgument))
+            {
+                return ArgumentType.Number;
+            }
+            else if (TimeSpan.TryParse(argument, out timespanArgument))
             {
                 return ArgumentType.TimeSpan;
             }
@@ -193,10 +199,7 @@ namespace Calculator
             {
                 return ArgumentType.DateTime;
             } 
-            else if (double.TryParse(argument, out numberArgument))
-            {
-                return ArgumentType.Number;
-            } else
+            else 
             {
                 return ArgumentType.String;
             }
