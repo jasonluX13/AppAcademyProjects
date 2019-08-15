@@ -25,6 +25,10 @@ namespace touch
                     File.Create(filename);
                 }
             }
+            else
+            {
+                Console.WriteLine("Usage: touch <filename>");
+            }
         }
     }
 }
