@@ -8,12 +8,12 @@ namespace ShipHunter
 {
     class Ship
     {
-        public Ship(string type, int length, string[] location, int health)
+        public Ship(string type, int length, string[] location)
         {
             Type = type;
             Length = length;
             Location = location;
-            Health = health;
+            Health = length;
         }
         public string Type { get; set; }
         public int Length { get; set; }
