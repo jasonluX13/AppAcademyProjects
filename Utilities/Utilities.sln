@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "touch", "touch\touch.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "makedir", "makedir\makedir.csproj", "{0AC13BC3-936C-4350-9F2C-96ABC8E6030A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "curl", "curl\curl.csproj", "{E233125C-D71C-4CD0-81B0-132C68E68931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grep", "grep\grep.csproj", "{FC42CF23-3BE2-4B25-8353-91F4F2341BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{0AC13BC3-936C-4350-9F2C-96ABC8E6030A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AC13BC3-936C-4350-9F2C-96ABC8E6030A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AC13BC3-936C-4350-9F2C-96ABC8E6030A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E233125C-D71C-4CD0-81B0-132C68E68931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E233125C-D71C-4CD0-81B0-132C68E68931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E233125C-D71C-4CD0-81B0-132C68E68931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E233125C-D71C-4CD0-81B0-132C68E68931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC42CF23-3BE2-4B25-8353-91F4F2341BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC42CF23-3BE2-4B25-8353-91F4F2341BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC42CF23-3BE2-4B25-8353-91F4F2341BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC42CF23-3BE2-4B25-8353-91F4F2341BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
