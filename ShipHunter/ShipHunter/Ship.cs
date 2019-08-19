@@ -17,7 +17,7 @@ namespace ShipHunter
         }
         public string Type { get; set; }
         public int Length { get; set; }
-        public string[] Location { get; set; } // ["A2" "A3"
+        public string[] Location { get; set; }
         public int Health { get; set; }
     }
 }
