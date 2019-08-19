@@ -289,7 +289,7 @@ namespace ShipHunter
                 col++;
                 string[] positions = new string[length];
                 bool right = false;
-                if (rand.Next(1) == 1)
+                if (rand.Next(2) == 1)
                 {
                     right = true;
                 }
@@ -324,7 +324,7 @@ namespace ShipHunter
                 }
                 
                 bool right = true; //false means down
-                if (rand.Next(1) == 1)
+                if (rand.Next(2) == 1)
                 {
                     right = false;
                 }
