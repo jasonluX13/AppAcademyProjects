@@ -1,37 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WidgetLibrary.Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WidgetLibrary.Default" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <h1>Widget Library</h1>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Widget Library</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <h1>Widget Library</h1>
-        <ul>
-            <li>
-                <a href="ExampleRenderTime.aspx">Render Time</a>
-            </li>
-            <li>
-                  <a href="ExampleQuote.aspx">Quote of the Day</a>
-            </li>
-            <li>
-                <a href="ExampleCounter.aspx">Counter</a>
-            </li>
-            <li>
-                <a href="ExampleFontPreview.aspx">Font Preview</a>
-            </li>
-             <li>
-                <a href="ExampleWeather.aspx">Weather</a>
-            </li>
-            <li>
-                <a href="ExampleTodo.aspx">ToDoList</a>
-            </li>
-        </ul>
-        
-    </div>
-    </form>
-</body>
-</html>
+    <h2>Control Documentation</h2>
+
+</asp:Content>

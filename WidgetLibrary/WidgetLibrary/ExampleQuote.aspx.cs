@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WidgetLibrary
 {
-    public partial class ExampleQuote : System.Web.UI.Page
+    public partial class ExampleQuote : Base
     {
         protected void Page_Load(object sender, EventArgs e)
         {
