@@ -26,6 +26,9 @@
              <li>
                 <a href="ExampleWeather.aspx">Weather</a>
             </li>
+            <li>
+                <a href="ExampleTodo.aspx">ToDoList</a>
+            </li>
         </ul>
         
     </div>

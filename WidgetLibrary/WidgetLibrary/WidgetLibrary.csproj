@@ -117,12 +117,15 @@
     <Content Include="Controls\FontPreview.ascx" />
     <Content Include="Controls\QuoteOfTheDay.ascx" />
     <Content Include="Controls\RenderTime.ascx" />
+    <Content Include="Controls\ToDoInput.ascx" />
+    <Content Include="Controls\ToDoList.ascx" />
     <Content Include="Controls\Weather.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="ExampleCounter.aspx" />
     <Content Include="ExampleFontPreview.aspx" />
     <Content Include="ExampleQuote.aspx" />
     <Content Include="ExampleRenderTime.aspx" />
+    <Content Include="ExampleTodo.aspx" />
     <Content Include="ExampleWeather.aspx" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -163,6 +166,20 @@
     <Compile Include="Controls\RenderTime.ascx.designer.cs">
       <DependentUpon>RenderTime.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ToDoInput.ascx.cs">
+      <DependentUpon>ToDoInput.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ToDoInput.ascx.designer.cs">
+      <DependentUpon>ToDoInput.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToDoList.ascx.cs">
+      <DependentUpon>ToDoList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ToDoList.ascx.designer.cs">
+      <DependentUpon>ToDoList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Weather.ascx.cs">
       <DependentUpon>Weather.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +188,8 @@
       <DependentUpon>Weather.ascx</DependentUpon>
     </Compile>
     <Compile Include="Data\QuotesData.cs" />
+    <Compile Include="Data\ToDoData.cs" />
+    <Compile Include="Data\ToDoItem.cs" />
     <Compile Include="Data\WeatherData.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -206,6 +225,13 @@
     </Compile>
     <Compile Include="ExampleRenderTime.aspx.designer.cs">
       <DependentUpon>ExampleRenderTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleTodo.aspx.cs">
+      <DependentUpon>ExampleTodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExampleTodo.aspx.designer.cs">
+      <DependentUpon>ExampleTodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExampleWeather.aspx.cs">
       <DependentUpon>ExampleWeather.aspx</DependentUpon>
