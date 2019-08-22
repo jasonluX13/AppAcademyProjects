@@ -18,6 +18,8 @@
             <asp:Label ID="Result" Text="Result: " runat="server"></asp:Label>
             <br />
             <asp:HyperLink href="Default.aspx" runat="server" Text="Clear"></asp:HyperLink>
+            <br />
+            <asp:HyperLink runat="server" Text="Go Bye Bye" NavigateUrl="~/Xyzzy.aspx" />
         </div>
     </form>
 </body>
