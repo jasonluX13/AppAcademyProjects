@@ -1,0 +1,24 @@
+﻿body {
+    background-color: #ff73fa;
+    color: #77f786;
+}
+
+a {
+    color: #2d6df7;
+}
+
+a:hover {
+    color: #0c00f7;
+}
+
+h1 {
+   color: #d2f700;
+}
+
+h2{
+    color: #4ce5fc;
+}
+
+h3{
+    color: #97fcb1;
+}
