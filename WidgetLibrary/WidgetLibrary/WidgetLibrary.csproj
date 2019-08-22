@@ -99,10 +99,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Blue\Blue.css" />
     <Content Include="App_Themes\Dark\dark.css" />
     <Content Include="App_Themes\Light\light.css" />
     <Content Include="App_Themes\Neon\neon.css" />
-    <Content Include="Base.aspx" />
+    <Content Include="App_Themes\Rainbow\rainbow.css" />
+    <Content Include="App_Themes\Red\red.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -143,12 +145,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base.aspx.cs">
-      <DependentUpon>Base.aspx</DependentUpon>
+    <Compile Include="Base.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Base.aspx.designer.cs">
-      <DependentUpon>Base.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Counter.ascx.cs">
       <DependentUpon>Counter.ascx</DependentUpon>

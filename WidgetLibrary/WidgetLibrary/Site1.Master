@@ -30,6 +30,9 @@
                     <asp:ListItem Text="Light" Value="Light" />
                     <asp:ListItem Text="Dark" Value="Dark" />
                     <asp:ListItem Text="Neon" Value="Neon" />
+                    <asp:ListItem Text="Blue" Value="Blue" />
+                    <asp:ListItem Text="Red" Value="Red" />
+                    <asp:ListItem Text="Rainbow" Value="Rainbow" />
                 </asp:DropDownList>
             </div>
         </header>
