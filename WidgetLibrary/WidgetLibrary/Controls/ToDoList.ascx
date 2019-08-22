@@ -5,18 +5,24 @@
         <table>
             <tr>
                 <th>Tasks</th>
+                <th>Category</th>
                 <th>Complete</th>
             </tr>
     </HeaderTemplate>
     <ItemTemplate>
         <tr>
             <td>
-                <asp:label id="Description" text=<%# Eval("Description") %> runat="server" font-strikeout='<%# Eval("Done") %>' />
+                <asp:Label ID="Description" Text='<%# Eval("Description") %>' runat="server" Font-Strikeout='<%# Eval("Done") %>' />
             </td>
             <td>
-                <asp:button id="Done" Text="Done" runat="server" commandname="Done" 
-                            commandargument='<%# Container.ItemIndex %>'
-                            visible='<%# !((bool)Eval("Done")) %>' />
+                <asp:Label ID="Category" runat="server"
+                    Text='<%# Eval("Category") %>'
+                    Font-Strikeout='<%# Eval("Done") %>' />
+            </td>
+            <td>
+                <asp:Button ID="Done" Text="Done" runat="server" CommandName="Done"
+                    CommandArgument='<%# Container.ItemIndex %>'
+                    Visible='<%# !((bool)Eval("Done")) %>' />
             </td>
         </tr>
     </ItemTemplate>

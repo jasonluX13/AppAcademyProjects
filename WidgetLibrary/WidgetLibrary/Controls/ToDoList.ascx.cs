@@ -13,9 +13,12 @@ namespace WidgetLibrary.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            PopulateList();
-  
+           if (!IsPostBack)
+            {
+                PopulateList();
+               
+            }
+
         }
 
 
@@ -27,6 +30,8 @@ namespace WidgetLibrary.Controls
             TaskList.DataSource = todos;
             TaskList.DataBind();
         }
+
+        
 
         protected void TaskList_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
