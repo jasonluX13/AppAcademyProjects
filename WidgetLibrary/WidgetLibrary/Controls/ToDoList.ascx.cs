@@ -11,12 +11,14 @@ namespace WidgetLibrary.Controls
 {
     public partial class ToDoList : System.Web.UI.UserControl
     {
+        public int NumberOfRecordsToDisplay { get; set; }
+        public string CategoryFilter { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (!IsPostBack)
+            if (!IsPostBack)
             {
                 PopulateList();
-               
+
             }
 
         }
@@ -24,22 +26,62 @@ namespace WidgetLibrary.Controls
 
         private void PopulateList()
         {
-            List<ToDoItem> todos = ToDoData.GetToDoItems();
-            Debug.WriteLine(todos);
-
-            TaskList.DataSource = todos;
+            TaskList.DataSource = GetDisplay();
             TaskList.DataBind();
+
         }
 
-        
+        private List<ToDoItem> GetDisplay()
+        {
+            List<ToDoItem> todos = ToDoData.GetToDoItems();
+            List<ToDoItem> todosDisplay = new List<ToDoItem>();
+            Debug.WriteLine(todos);
+
+            if (NumberOfRecordsToDisplay > 0 && NumberOfRecordsToDisplay < todos.Count)
+            {
+                int index = 0;
+                while (todosDisplay.Count < NumberOfRecordsToDisplay)
+                {
+                    if (string.IsNullOrWhiteSpace(CategoryFilter))
+                    {
+                        todosDisplay.Add(todos[index]);
+                    }
+                    else
+                    {
+                        if (todos[index].Category == CategoryFilter)
+                        {
+                            todosDisplay.Add(todos[index]);
+                        }
+                    }
+                    index++;
+                }
+            }
+            else if (!string.IsNullOrWhiteSpace(CategoryFilter))
+            {
+                int index = 0;
+                while (index < todos.Count)
+                {
+                    if (todos[index].Category == CategoryFilter)
+                    {
+                        todosDisplay.Add(todos[index]);
+                    }
+                    index++;
+                }
+            }
+            else
+            {
+                todosDisplay = todos;
+            }
+            return todosDisplay;
+        }
 
         protected void TaskList_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int index = int.Parse((string)e.CommandArgument);
-            List<ToDoItem> todos = ToDoData.GetToDoItems();
+            List<ToDoItem> todos = GetDisplay();
             todos[index].Done = true;
             PopulateList();
-
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

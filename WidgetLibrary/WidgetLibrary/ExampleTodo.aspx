@@ -11,7 +11,8 @@
 
     <h3>Available Properties</h3>
     <ul>
-        <li>No special properties.</li>
+        <li>`NumberOfRecordsToDisplay`: Specifies the number of tasks to display</li>
+        <li>`CategoryFilter`: Specifies the category to display</li>
 
     </ul>
 
@@ -25,21 +26,33 @@
     </div>
 
 
-    <p>
-        This control creates a ToDoList input field that can be used to add a task.
-    </p>
-
-    <h3>Available Properties</h3>
-    <ul>
-        <li>No special properties.</li>
-
-    </ul>
-
     <h3>Examples</h3>
     <pre>&lt;wl:todolist runat="server" /&gt;</pre>
 
     <!-- This content is being rendered by an instance of the ToDoList user control -->
     <div>
         <wl:ToDoList runat="server" />
+    </div>
+
+    <pre>&lt;wl:todolist NumberOfRecordsToDisplay="3" runat="server" /&gt;</pre>
+
+    <!-- This content is being rendered by an instance of the ToDoList user control -->
+    <div>
+        <wl:ToDoList NumberOfRecordsToDisplay="3" runat="server" />
+    </div>
+
+
+    <pre>&lt;wl:todolist CategoryFilter="Work" runat="server" /&gt;</pre>
+
+    <!-- This content is being rendered by an instance of the ToDoList user control -->
+    <div>
+        <wl:ToDoList CategoryFilter="Work" runat="server" />
+    </div>
+
+    <pre>&lt;wl:todolist NumberOfRecordsToDisplay="2" CategoryFilter="Work" runat="server" /&gt;</pre>
+
+    <!-- This content is being rendered by an instance of the ToDoList user control -->
+    <div>
+        <wl:ToDoList NumberOfRecordsToDisplay="2" CategoryFilter="Work" runat="server" />
     </div>
 </asp:Content>
