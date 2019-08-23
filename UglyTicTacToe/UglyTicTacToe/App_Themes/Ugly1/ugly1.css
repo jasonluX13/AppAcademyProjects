@@ -1,11 +1,13 @@
 ﻿body {
     background-color: #6b4a06;
     color: #77f786;
+    background-image: url("https://static.fjcdn.com/pictures/Enjoy_e7da0d_906101.jpg");
 }
 
 
 h1 {
    color: #ff73fa;
+   background-color: #77f786;
    transform: translate(200px);
    transition: 2s all;
    border: solid black 5px;
@@ -22,11 +24,30 @@ h2 {
     background-color: bisque;
 }
 
+h3 {
+    color:  #00fc61;
+    background-color: gray;
+}
+
 #ResetGame {
     background-color: aquamarine;
-    padding: 100px;
-    border: solid purple 20px;
+    padding: 10px;
+    border: solid purple 5px;
+    width: 400px;
+}
+
+#ResetGame:hover {
+   transform:  translate(450px) rotate(180deg) scale(3);
+   background-color: chartreuse;
+   border-color: aquamarine;
+   transition: 2s all;
 }
 
 
+
+/*.UglyButton {
+   transform:  translate(100px) scale(1.5);
+   background-color: chartreuse;
+   transition: 1s all;
+}*/
 

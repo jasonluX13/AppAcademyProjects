@@ -10,7 +10,7 @@
 namespace UglyTicTacToe {
     
     
-    public partial class Game {
+    public partial class Computer {
         
         /// <summary>
         /// form1 control.
@@ -29,6 +29,15 @@ namespace UglyTicTacToe {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Winner;
+        
+        /// <summary>
+        /// SelectAI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SelectAI;
         
         /// <summary>
         /// GameBoard control.
@@ -127,6 +136,6 @@ namespace UglyTicTacToe {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ResetGame;
+        protected global::System.Web.UI.WebControls.ImageButton ResetGame;
     }
 }

@@ -42,15 +42,15 @@ namespace UglyTicTacToe
 
         }
 
-        protected void aa_Click(object sender, EventArgs e)
+        protected void TakeTurn(Button button, int row, int col)
         {
             Board.NextTurn();
             if (Turn == true)
             {
-                aa.Text = "X";
-                Board.GetBoard()[0, 0] = Player.X;
+                button.Text = "X";
+                Board.GetBoard()[row, col] = Player.X;
                 Turn = false;
-                
+
                 if (Win(Player.X))
                 {
                     Winner.Text = "Congratulations Player X, You Won!";
@@ -59,225 +59,59 @@ namespace UglyTicTacToe
             }
             else
             {
-                aa.Text = "O";
+                button.Text = "O";
                 Turn = true;
-                Board.GetBoard()[0, 0] = Player.O;
+                Board.GetBoard()[row, col] = Player.O;
                 if (Win(Player.O))
                 {
                     Winner.Text = "Congratulations Player O, You Won!";
                 }
             }
-            aa.Enabled = false;
+            button.Enabled = false;
+        }
+        protected void aa_Click(object sender, EventArgs e)
+        {
+            TakeTurn(aa, 0, 0);
         }
 
         protected void ab_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                ab.Text = "X";
-                Turn = false;
-                Board.GetBoard()[0, 1] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                ab.Text = "O";
-                Turn = true;
-                Board.GetBoard()[0, 1] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            ab.Enabled = false;
+            TakeTurn(ab, 0, 1);
         }
 
         protected void ac_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                ac.Text = "X";
-                Turn = false;
-                Board.GetBoard()[0, 2] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                ac.Text = "O";
-                Turn = true;
-                Board.GetBoard()[0, 2] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            ac.Enabled = false;
+            TakeTurn(ac, 0, 2);
         }
 
         protected void ba_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                ba.Text = "X";
-                Turn = false;
-                Board.GetBoard()[1, 0] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                ba.Text = "O";
-                Turn = true;
-                Board.GetBoard()[1, 0] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            ba.Enabled = false;
+            TakeTurn(ba, 1, 0);
         }
 
         protected void bb_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                bb.Text = "X";
-                Turn = false;
-                Board.GetBoard()[1, 1] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                bb.Text = "O";
-                Turn = true;
-                Board.GetBoard()[1, 1] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            bb.Enabled = false;
+            TakeTurn(bb, 1, 1);
         }
 
         protected void bc_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                bc.Text = "X";
-                Turn = false;
-                Board.GetBoard()[1, 2] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                bc.Text = "O";
-                Turn = true;
-                Board.GetBoard()[1, 2] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            bc.Enabled = false;
+            TakeTurn(bc, 1, 2);
         }
 
         protected void ca_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                ca.Text = "X";
-                Turn = false;
-                Board.GetBoard()[2, 0] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                ca.Text = "O";
-                Turn = true;
-                Board.GetBoard()[2, 0] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            ca.Enabled = false;
-           
+            TakeTurn(ca, 2, 0);
         }
 
         protected void cb_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                cb.Text = "X";
-                Turn = false;
-                Board.GetBoard()[2, 1] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                cb.Text = "O";
-                Turn = true;
-                Board.GetBoard()[2, 1] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            cb.Enabled = false;
+            TakeTurn(cb, 2, 1);
         }
 
         protected void cc_Click(object sender, EventArgs e)
         {
-            Board.NextTurn();
-            if (Turn == true)
-            {
-                cc.Text = "X";
-                Turn = false;
-                Board.GetBoard()[2, 2] = Player.X;
-                if (Win(Player.X))
-                {
-                    Winner.Text = "Congratulations Player X, You Won!";
-                }
-            }
-            else
-            {
-                cc.Text = "O";
-                Turn = true;
-                Board.GetBoard()[2, 2] = Player.O;
-                if (Win(Player.O))
-                {
-                    Winner.Text = "Congratulations Player O, You Won!";
-                }
-            }
-            cc.Enabled = false;
-           
+            TakeTurn(cc, 2, 2);
         }
 
         protected bool Win(Player player)
@@ -320,14 +154,16 @@ namespace UglyTicTacToe
 
         protected void EnableButtons(bool enable)
         {
+            //GameBoard.Enabled = enable;
+
             aa.Enabled = enable;
             ab.Enabled = enable;
             ac.Enabled = enable;
-         
+
             ba.Enabled = enable;
             bb.Enabled = enable;
             bc.Enabled = enable;
-     
+
             ca.Enabled = enable;
             cb.Enabled = enable;
             cc.Enabled = enable;
@@ -364,5 +200,7 @@ namespace UglyTicTacToe
                 Winner.Text += "<br/>";
             }
         }
+
+       
     }
 }

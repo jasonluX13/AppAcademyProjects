@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Computer.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -118,6 +119,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Board.cs" />
+    <Compile Include="Computer.aspx.cs">
+      <DependentUpon>Computer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Computer.aspx.designer.cs">
+      <DependentUpon>Computer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Game.aspx.cs">
       <DependentUpon>Game.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
