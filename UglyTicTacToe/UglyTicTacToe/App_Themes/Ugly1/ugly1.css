@@ -1,0 +1,32 @@
+﻿body {
+    background-color: #6b4a06;
+    color: #77f786;
+}
+
+
+h1 {
+   color: #ff73fa;
+   transform: translate(200px);
+   transition: 2s all;
+   border: solid black 5px;
+}
+
+h1:hover {
+   transform: translate(700px) scale(2) rotate(-20deg) ;
+   transition: 2s all;
+}
+
+h2 {
+    color:  #00fc61;
+    border: solid pink 10px;
+    background-color: bisque;
+}
+
+#ResetGame {
+    background-color: aquamarine;
+    padding: 100px;
+    border: solid purple 20px;
+}
+
+
+

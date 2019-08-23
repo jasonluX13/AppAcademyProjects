@@ -40,7 +40,7 @@ namespace WidgetLibrary.Controls
             if (NumberOfRecordsToDisplay > 0 && NumberOfRecordsToDisplay < todos.Count)
             {
                 int index = 0;
-                while (todosDisplay.Count < NumberOfRecordsToDisplay)
+                while (todosDisplay.Count < NumberOfRecordsToDisplay && index < todos.Count)
                 {
                     if (string.IsNullOrWhiteSpace(CategoryFilter))
                     {

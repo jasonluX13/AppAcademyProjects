@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4F8618F0-45DF-4341-B8A2-FD33D21C3A1A}</ProjectGuid>
+    <ProjectGuid>{B3B32769-DCDD-4BD6-B394-38F75171CE8B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WidgetLibrary</RootNamespace>
-    <AssemblyName>WidgetLibrary</AssemblyName>
+    <RootNamespace>UglyTicTacToe</RootNamespace>
+    <AssemblyName>UglyTicTacToe</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -76,11 +76,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -99,19 +94,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Blue\Blue.css" />
-    <Content Include="App_Themes\Dark\dark.css" />
-    <Content Include="App_Themes\Light\light.css" />
-    <Content Include="App_Themes\Neon\neon.css" />
-    <Content Include="App_Themes\Rainbow\rainbow.css" />
-    <Content Include="App_Themes\Red\red.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="scripts\jquery-3.4.1.min.map" />
-    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,149 +106,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controls\Counter.ascx" />
-    <Content Include="Controls\FontPreview.ascx" />
-    <Content Include="Controls\QuoteOfTheDay.ascx" />
-    <Content Include="Controls\RenderTime.ascx" />
-    <Content Include="Controls\ToDoInput.ascx" />
-    <Content Include="Controls\ToDoList.ascx" />
-    <Content Include="Controls\Weather.ascx" />
-    <Content Include="Default.aspx" />
-    <Content Include="ExampleCounter.aspx" />
-    <Content Include="ExampleFontPreview.aspx" />
-    <Content Include="ExampleQuote.aspx" />
-    <Content Include="ExampleRenderTime.aspx" />
-    <Content Include="ExampleTodo.aspx" />
-    <Content Include="ExampleWeather.aspx" />
+    <Content Include="App_Themes\Ugly1\ugly1.css" />
+    <Content Include="Game.aspx" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <None Include="scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="scripts\jquery-3.4.1.js" />
-    <Content Include="scripts\jquery-3.4.1.min.js" />
-    <Content Include="scripts\jquery-3.4.1.slim.js" />
-    <Content Include="scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\Counter.ascx.cs">
-      <DependentUpon>Counter.ascx</DependentUpon>
+    <Compile Include="Board.cs" />
+    <Compile Include="Game.aspx.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\Counter.ascx.designer.cs">
-      <DependentUpon>Counter.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\FontPreview.ascx.cs">
-      <DependentUpon>FontPreview.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\FontPreview.ascx.designer.cs">
-      <DependentUpon>FontPreview.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\QuoteOfTheDay.ascx.cs">
-      <DependentUpon>QuoteOfTheDay.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\QuoteOfTheDay.ascx.designer.cs">
-      <DependentUpon>QuoteOfTheDay.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\RenderTime.ascx.cs">
-      <DependentUpon>RenderTime.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\RenderTime.ascx.designer.cs">
-      <DependentUpon>RenderTime.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ToDoInput.ascx.cs">
-      <DependentUpon>ToDoInput.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\ToDoInput.ascx.designer.cs">
-      <DependentUpon>ToDoInput.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ToDoList.ascx.cs">
-      <DependentUpon>ToDoList.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\ToDoList.ascx.designer.cs">
-      <DependentUpon>ToDoList.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Weather.ascx.cs">
-      <DependentUpon>Weather.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\Weather.ascx.designer.cs">
-      <DependentUpon>Weather.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\QuotesData.cs" />
-    <Compile Include="Data\ToDoData.cs" />
-    <Compile Include="Data\ToDoItem.cs" />
-    <Compile Include="Data\WeatherData.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleCounter.aspx.cs">
-      <DependentUpon>ExampleCounter.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExampleCounter.aspx.designer.cs">
-      <DependentUpon>ExampleCounter.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleFontPreview.aspx.cs">
-      <DependentUpon>ExampleFontPreview.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExampleFontPreview.aspx.designer.cs">
-      <DependentUpon>ExampleFontPreview.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleQuote.aspx.cs">
-      <DependentUpon>ExampleQuote.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExampleQuote.aspx.designer.cs">
-      <DependentUpon>ExampleQuote.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleRenderTime.aspx.cs">
-      <DependentUpon>ExampleRenderTime.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExampleRenderTime.aspx.designer.cs">
-      <DependentUpon>ExampleRenderTime.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleTodo.aspx.cs">
-      <DependentUpon>ExampleTodo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExampleTodo.aspx.designer.cs">
-      <DependentUpon>ExampleTodo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleWeather.aspx.cs">
-      <DependentUpon>ExampleWeather.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExampleWeather.aspx.designer.cs">
-      <DependentUpon>ExampleWeather.aspx</DependentUpon>
+    <Compile Include="Game.aspx.designer.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site1.Master.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site1.Master.designer.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,9 +147,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59560</DevelopmentServerPort>
+          <DevelopmentServerPort>62311</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59560/</IISUrl>
+          <IISUrl>http://localhost:62311/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
