@@ -76,6 +76,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Theme1\Theme1.css" />
     <Content Include="CalculatorUI.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
