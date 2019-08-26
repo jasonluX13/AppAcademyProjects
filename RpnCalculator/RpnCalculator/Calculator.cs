@@ -29,5 +29,85 @@ namespace RpnCalculator
             }
             return fourEntries;
         }
+
+        public string PerformOperation(OperationType operationType)
+        {
+            IOperation operation = null;
+            switch (operationType)
+            {
+                case OperationType.ADD:
+                    operation = new AddOperation();
+                    break;
+                case OperationType.MINUS:
+                    operation = new SubtractOperation();
+                    break;
+                case OperationType.MULTIPLY:
+                    operation = new MultiplyOperation();
+                    break;
+                case OperationType.DIVIDE:
+                    operation = new DivideOperation();
+                    break;
+                case OperationType.NEGATE:
+                    operation = new NegateOperation();
+                    break;
+                case OperationType.SQROOT:
+                    operation = new SquareRootOperation();
+                    break;
+                case OperationType.EXPONENT:
+                    operation = new ExponentOperation();
+                    break;
+                case OperationType.NATURAL:
+                    operation = new NaturalOperation();
+                    break;
+                case OperationType.RECIPROCAL:
+                    operation = new ReciprocalOperation();
+                    break;
+                case OperationType.SIN:
+                    operation = new SinOperation();
+                    break;
+                case OperationType.COS:
+                    operation = new CosOperation();
+                    break;
+                
+            }
+            if (operation != null)
+            {
+                try
+                {
+                    operation.Perform(CalcStack);
+                }
+                catch (Exception e)
+                {
+                    return e.ToString();
+                }
+                
+            }
+            return string.Empty;
+        }
+
+        public void Drop()
+        {
+            CalcStack.Pop();
+        }
+        public void Clear()
+        {
+            CalcStack.Clear();
+        }
+        public void Swap()
+        {
+            Decimal top = CalcStack.Pop();
+            Decimal next = CalcStack.Pop();
+            CalcStack.Push(top);
+            CalcStack.Push(next);
+        }
+        public void Rotate()
+        {
+            Decimal a = CalcStack.Pop();
+            Decimal b = CalcStack.Pop();
+            Decimal c = CalcStack.Pop();
+            CalcStack.Push(a);
+            CalcStack.Push(c);
+            CalcStack.Push(b);
+        }
     }
 }
