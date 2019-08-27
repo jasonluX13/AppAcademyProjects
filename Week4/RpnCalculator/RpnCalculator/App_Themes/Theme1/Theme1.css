@@ -1,0 +1,33 @@
+﻿body {
+}
+
+div {
+    background-color: lightgray;
+    width: 20%;
+}
+
+.Button{
+    padding: 5px;
+    border-radius: 10px;
+}
+.Gray{
+    background-color: lightgray;
+}
+.Gray:hover {
+    background-color: gray;
+}
+
+.Green {
+    background-color: lightgreen;
+}
+
+.Green:hover {
+    background-color: green;
+}
+
+.Blue {
+    background-color: lightblue;
+}
+.Blue:hover {
+    background-color: blue;
+}
