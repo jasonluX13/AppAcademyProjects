@@ -20,6 +20,7 @@ namespace Library.Controls
         {
             if (edit)
             {
+                AddOrEdit.Text = "Edit Author";
                 if (!int.TryParse(Request.QueryString["ID"], out authorId))
                 {
                     Response.Redirect(AuthorList);
@@ -43,6 +44,10 @@ namespace Library.Controls
                         Response.Redirect(AuthorList);
                     }
                 }
+            }
+            else
+            {
+                AddOrEdit.Text = "Add Author";
             }
         }
 

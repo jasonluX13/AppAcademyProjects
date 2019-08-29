@@ -19,6 +19,39 @@ namespace Library.Controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (edit)
+            {
+                AddOrEdit.Text = "Edit Book";
+                if (!int.TryParse(Request.QueryString["ID"], out bookId))
+                {
+                    Response.Redirect(BookList);
+                }
+                if (!IsPostBack)
+                {
+                    DataTable dt = DatabaseHelper.Retrieve(@"
+                    select Title, ISBN, FirstName, LastName
+                    from Book Inner Join Author on (AuthorId = Author.Id)
+                    where Book.Id = @BookId
+                ", new SqlParameter("@BookId", bookId));
+
+                    if (dt.Rows.Count == 1)
+                    {
+                        Title.Text = dt.Rows[0].Field<string>("Title");
+                        ISBN.Text = dt.Rows[0].Field<string>("ISBN");
+                        string authorName = dt.Rows[0].Field<string>("FirstName") + " ";
+                        authorName += dt.Rows[0].Field<string>("LastName");
+                        Authors.SelectedValue = authorName;
+                    }
+                    else
+                    {
+                        Response.Redirect(BookList);
+                    }
+                }
+            }
+            else
+            {
+                AddOrEdit.Text = "Add Book";
+            }
             if (!IsPostBack)
             {
                 DataTable dt = DatabaseHelper.Retrieve(@"
@@ -48,7 +81,17 @@ namespace Library.Controls
 
             if (edit)
             {
-                
+                DatabaseHelper.Update(@"
+                update Book set
+                    Title = @Title,
+                    ISBN = @ISBN,
+                    AuthorId = @AuthorId
+                where Id = @BookId
+                ",
+                new SqlParameter("@Title", title),
+                new SqlParameter("@ISBN", isbn),
+                new SqlParameter("@AuthorId", authorId),
+                new SqlParameter("@BookId", bookId));
             }
             else
             {

@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-    <lib:bookaddedit booklist="~/Book.aspx" runat="server"></lib:bookaddedit>
+    <lib:bookaddedit booklist="~/Book.aspx" edit="false" runat="server"></lib:bookaddedit>
 </asp:Content>

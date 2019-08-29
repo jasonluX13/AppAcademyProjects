@@ -13,6 +13,15 @@ namespace Library.Controls {
     public partial class AuthorAddEdit {
         
         /// <summary>
+        /// AddOrEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AddOrEdit;
+        
+        /// <summary>
         /// FirstNameLabel control.
         /// </summary>
         /// <remarks>

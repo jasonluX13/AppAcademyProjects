@@ -77,16 +77,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddBook.aspx" />
+    <Content Include="AddLibrary.aspx" />
+    <Content Include="App_Themes\Theme1\Theme1.css" />
     <Content Include="Author.aspx" />
     <Content Include="AuthorAdd.aspx" />
     <Content Include="AuthorEdit.aspx" />
     <Content Include="Book.aspx" />
+    <Content Include="BookEdit.aspx" />
     <Content Include="Controls\AuthorAddEdit.ascx" />
     <Content Include="Controls\AuthorList.ascx" />
     <Content Include="Controls\BookAddEdit.ascx" />
     <Content Include="Controls\BookList.ascx" />
+    <Content Include="Controls\LibraryAddEdit.ascx" />
+    <Content Include="Controls\LibraryList.ascx" />
+    <Content Include="Controls\PatronList.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="EditLibrary.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Library.aspx" />
+    <Content Include="Patron.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +105,13 @@
     </Compile>
     <Compile Include="AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddLibrary.aspx.cs">
+      <DependentUpon>AddLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddLibrary.aspx.designer.cs">
+      <DependentUpon>AddLibrary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Author.aspx.cs">
       <DependentUpon>Author.aspx</DependentUpon>
@@ -125,6 +141,13 @@
     <Compile Include="Book.aspx.designer.cs">
       <DependentUpon>Book.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookEdit.aspx.cs">
+      <DependentUpon>BookEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookEdit.aspx.designer.cs">
+      <DependentUpon>BookEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AuthorAddEdit.ascx.cs">
       <DependentUpon>AuthorAddEdit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +176,27 @@
     <Compile Include="Controls\BookList.ascx.designer.cs">
       <DependentUpon>BookList.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LibraryAddEdit.ascx.cs">
+      <DependentUpon>LibraryAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibraryAddEdit.ascx.designer.cs">
+      <DependentUpon>LibraryAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibraryList.ascx.cs">
+      <DependentUpon>LibraryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibraryList.ascx.designer.cs">
+      <DependentUpon>LibraryList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PatronList.ascx.cs">
+      <DependentUpon>PatronList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PatronList.ascx.designer.cs">
+      <DependentUpon>PatronList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -161,8 +205,22 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditLibrary.aspx.cs">
+      <DependentUpon>EditLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditLibrary.aspx.designer.cs">
+      <DependentUpon>EditLibrary.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
     </Compile>
     <Compile Include="Library.Master.cs">
       <DependentUpon>Library.Master</DependentUpon>
@@ -170,6 +228,13 @@
     </Compile>
     <Compile Include="Library.Master.designer.cs">
       <DependentUpon>Library.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Patron.aspx.cs">
+      <DependentUpon>Patron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patron.aspx.designer.cs">
+      <DependentUpon>Patron.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

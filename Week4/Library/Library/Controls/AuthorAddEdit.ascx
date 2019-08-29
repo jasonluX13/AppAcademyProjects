@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AuthorAddEdit.ascx.cs" Inherits="Library.Controls.AuthorAddEdit" %>
 
-<h2>Add Author</h2>
+<h2>
+    <asp:label ID="AddOrEdit" runat="server"></asp:label>
+</h2>
 
 <fieldset>
 

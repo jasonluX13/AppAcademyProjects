@@ -10,7 +10,7 @@
 namespace Library.Controls {
     
     
-    public partial class BookAddEdit {
+    public partial class LibraryAddEdit {
         
         /// <summary>
         /// AddOrEdit control.
@@ -22,49 +22,76 @@ namespace Library.Controls {
         protected global::System.Web.UI.WebControls.Label AddOrEdit;
         
         /// <summary>
-        /// TitleLabel control.
+        /// BranchNameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TitleLabel;
+        protected global::System.Web.UI.WebControls.Label BranchNameLabel;
         
         /// <summary>
-        /// Title control.
+        /// BranchName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Title;
+        protected global::System.Web.UI.WebControls.TextBox BranchName;
         
         /// <summary>
-        /// ISBNLabel control.
+        /// AddressLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ISBNLabel;
+        protected global::System.Web.UI.WebControls.Label AddressLabel;
         
         /// <summary>
-        /// ISBN control.
+        /// Address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ISBN;
+        protected global::System.Web.UI.WebControls.TextBox Address;
         
         /// <summary>
-        /// Authors control.
+        /// StateLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Authors;
+        protected global::System.Web.UI.WebControls.Label StateLabel;
+        
+        /// <summary>
+        /// State control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox State;
+        
+        /// <summary>
+        /// ZipcodeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ZipcodeLabel;
+        
+        /// <summary>
+        /// Zipcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Zipcode;
         
         /// <summary>
         /// Save control.

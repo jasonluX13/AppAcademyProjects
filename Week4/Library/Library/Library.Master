@@ -11,12 +11,21 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <asp:Menu ID="MainMenu" runat="server" Orientation="Horizontal">
+            <asp:Menu ID="MainMenu" class="NavBar" runat="server" Orientation="Horizontal" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="20px" ForeColor="#7C6F57" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#F7F6F3" />
+                <DynamicSelectedStyle BackColor="#5D7B9D" />
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home" />
                     <asp:MenuItem NavigateUrl="~/Book.aspx" Text="Book" Value="Book" />
                     <asp:MenuItem NavigateUrl="~/Author.aspx" Text="Author" Value="Author" />
+                    <asp:MenuItem NavigateUrl="~/Library.aspx" Text="Library" Value="Library" />
+                    <asp:MenuItem NavigateUrl="~/Patron.aspx" Text="Patron" Value="Patron" />
                 </Items>
+                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#5D7B9D" />
             </asp:Menu>
         </header>
         <div>
