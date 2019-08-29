@@ -19,6 +19,7 @@
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home" />
                     <asp:MenuItem NavigateUrl="~/Book.aspx" Text="Book" Value="Book" />
+                    <asp:MenuItem NavigateUrl="~/BookCopy.aspx" Text="BookCopy" Value="BookCopy" />
                     <asp:MenuItem NavigateUrl="~/Author.aspx" Text="Author" Value="Author" />
                     <asp:MenuItem NavigateUrl="~/Library.aspx" Text="Library" Value="Library" />
                     <asp:MenuItem NavigateUrl="~/Patron.aspx" Text="Patron" Value="Patron" />

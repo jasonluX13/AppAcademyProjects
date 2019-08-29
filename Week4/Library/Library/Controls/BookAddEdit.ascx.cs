@@ -59,6 +59,7 @@ namespace Library.Controls
                     from Author
                 ");
                 ListItemCollection items = new ListItemCollection();
+                items.Add(new ListItem());
                 foreach (DataRow row in dt.Rows)
                 {
                     string author = "";
