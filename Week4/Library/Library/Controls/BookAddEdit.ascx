@@ -6,20 +6,23 @@
 
 <fieldset>
 
-    <div>
-        <asp:Label ID="TitleLabel" runat="server" AssociatedControlID="Title" Text="Title: " />
-        <asp:TextBox ID="Title" runat="server" />
+    <div class="form-row align-items-left">
+        <div class="form-group col-auto">
+            <asp:TextBox class="form-control" placeholder="Title" ID="Title" runat="server" />
+        </div>
+
+        <div class="form-group col-auto">
+           <asp:TextBox class="form-control" placeholder="ISBN" ID="ISBN" runat="server" />
+        </div>
+
+        <div class="form-group col-auto">
+            <asp:DropDownList class="form-control" ID="Authors" runat="server"  ></asp:DropDownList>
+        </div>
+
+        <div class="form-group col-auto">
+            <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Save" OnClick="Save_Click" />
+            <asp:Button ID="Button2" class="btn btn-primary" runat="server" Text="Cancel" OnClick="Cancel_Click" />
+        </div>
     </div>
 
-    <div>
-        <asp:Label ID="ISBNLabel" runat="server" AssociatedControlID="ISBN" Text="ISBN: " />
-        <asp:TextBox ID="ISBN" runat="server" />
-    </div>
-    <asp:DropDownList ID="Authors" runat="server"  ></asp:DropDownList>
-
-</fieldset>
-
-<div>
-    <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
-    <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
-</div>
+ </fieldset>

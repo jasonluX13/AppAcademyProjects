@@ -84,23 +84,33 @@
     <Content Include="AuthorAdd.aspx" />
     <Content Include="AuthorEdit.aspx" />
     <Content Include="Book.aspx" />
+    <Content Include="BookCopies.aspx" />
     <Content Include="BookCopy.aspx" />
     <Content Include="BookEdit.aspx" />
+    <Content Include="Borrowed.aspx" />
+    <Content Include="CheckoutBook.aspx" />
     <Content Include="Controls\AuthorAddEdit.ascx" />
     <Content Include="Controls\AuthorList.ascx" />
     <Content Include="Controls\BookAddEdit.ascx" />
+    <Content Include="Controls\BookCopies.ascx" />
     <Content Include="Controls\BookCopyAddEdit.ascx" />
     <Content Include="Controls\BookCopyList.ascx" />
     <Content Include="Controls\BookList.ascx" />
+    <Content Include="Controls\BorrowedList.ascx" />
+    <Content Include="Controls\CheckoutBook.ascx" />
+    <Content Include="Controls\LibrarianAddEdit.ascx" />
+    <Content Include="Controls\LibrarianList.ascx" />
     <Content Include="Controls\LibraryAddEdit.ascx" />
     <Content Include="Controls\LibraryList.ascx" />
     <Content Include="Controls\PatronAddEdit.ascx" />
     <Content Include="Controls\PatronList.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="EditBookCopy.aspx" />
+    <Content Include="EditLibrarian.aspx" />
     <Content Include="EditLibrary.aspx" />
     <Content Include="EditPatron.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Librarian.aspx" />
     <Content Include="Library.aspx" />
     <Content Include="Patron.aspx" />
     <Content Include="Web.config" />
@@ -155,6 +165,13 @@
     <Compile Include="Book.aspx.designer.cs">
       <DependentUpon>Book.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookCopies.aspx.cs">
+      <DependentUpon>BookCopies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookCopies.aspx.designer.cs">
+      <DependentUpon>BookCopies.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BookCopy.aspx.cs">
       <DependentUpon>BookCopy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,6 +185,20 @@
     </Compile>
     <Compile Include="BookEdit.aspx.designer.cs">
       <DependentUpon>BookEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Borrowed.aspx.cs">
+      <DependentUpon>Borrowed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Borrowed.aspx.designer.cs">
+      <DependentUpon>Borrowed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutBook.aspx.cs">
+      <DependentUpon>CheckoutBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutBook.aspx.designer.cs">
+      <DependentUpon>CheckoutBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\AuthorAddEdit.ascx.cs">
       <DependentUpon>AuthorAddEdit.ascx</DependentUpon>
@@ -190,6 +221,13 @@
     <Compile Include="Controls\BookAddEdit.ascx.designer.cs">
       <DependentUpon>BookAddEdit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BookCopies.ascx.cs">
+      <DependentUpon>BookCopies.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BookCopies.ascx.designer.cs">
+      <DependentUpon>BookCopies.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BookCopyAddEdit.ascx.cs">
       <DependentUpon>BookCopyAddEdit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +248,34 @@
     </Compile>
     <Compile Include="Controls\BookList.ascx.designer.cs">
       <DependentUpon>BookList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BorrowedList.ascx.cs">
+      <DependentUpon>BorrowedList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BorrowedList.ascx.designer.cs">
+      <DependentUpon>BorrowedList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckoutBook.ascx.cs">
+      <DependentUpon>CheckoutBook.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckoutBook.ascx.designer.cs">
+      <DependentUpon>CheckoutBook.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibrarianAddEdit.ascx.cs">
+      <DependentUpon>LibrarianAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibrarianAddEdit.ascx.designer.cs">
+      <DependentUpon>LibrarianAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibrarianList.ascx.cs">
+      <DependentUpon>LibrarianList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibrarianList.ascx.designer.cs">
+      <DependentUpon>LibrarianList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\LibraryAddEdit.ascx.cs">
       <DependentUpon>LibraryAddEdit.ascx</DependentUpon>
@@ -254,6 +320,13 @@
     <Compile Include="EditBookCopy.aspx.designer.cs">
       <DependentUpon>EditBookCopy.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditLibrarian.aspx.cs">
+      <DependentUpon>EditLibrarian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditLibrarian.aspx.designer.cs">
+      <DependentUpon>EditLibrarian.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditLibrary.aspx.cs">
       <DependentUpon>EditLibrary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -270,6 +343,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian.aspx.cs">
+      <DependentUpon>Librarian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Librarian.aspx.designer.cs">
+      <DependentUpon>Librarian.aspx</DependentUpon>
     </Compile>
     <Compile Include="Library.aspx.cs">
       <DependentUpon>Library.aspx</DependentUpon>

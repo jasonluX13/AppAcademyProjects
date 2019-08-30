@@ -10,7 +10,7 @@
 namespace Library.Controls {
     
     
-    public partial class BookAddEdit {
+    public partial class LibrarianAddEdit {
         
         /// <summary>
         /// AddOrEdit control.
@@ -22,48 +22,57 @@ namespace Library.Controls {
         protected global::System.Web.UI.WebControls.Label AddOrEdit;
         
         /// <summary>
-        /// Title control.
+        /// LibrariesLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Title;
+        protected global::System.Web.UI.WebControls.Label LibrariesLabel;
         
         /// <summary>
-        /// ISBN control.
+        /// Libraries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ISBN;
+        protected global::System.Web.UI.WebControls.DropDownList Libraries;
         
         /// <summary>
-        /// Authors control.
+        /// PatronLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Authors;
+        protected global::System.Web.UI.WebControls.Label PatronLabel;
         
         /// <summary>
-        /// Button1 control.
+        /// Patrons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList Patrons;
         
         /// <summary>
-        /// Button2 control.
+        /// Save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Save;
+        
+        /// <summary>
+        /// Cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancel;
     }
 }

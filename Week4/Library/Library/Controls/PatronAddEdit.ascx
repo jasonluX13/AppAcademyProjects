@@ -39,6 +39,6 @@
 </fieldset>
 
 <div>
-    <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
-    <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
+    <asp:Button ID="Save" class="btn btn-primary"  runat="server" Text="Save" OnClick="Save_Click" />
+    <asp:Button ID="Cancel" class="btn btn-primary" runat="server" Text="Cancel" OnClick="Cancel_Click" />
 </div>

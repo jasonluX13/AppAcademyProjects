@@ -2,37 +2,64 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <header>
-            <asp:Menu ID="MainMenu" class="NavBar" runat="server" Orientation="Horizontal" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="20px" ForeColor="#7C6F57" StaticSubMenuIndent="10px">
-                <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
-                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <DynamicMenuStyle BackColor="#F7F6F3" />
-                <DynamicSelectedStyle BackColor="#5D7B9D" />
-                <Items>
-                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home" />
-                    <asp:MenuItem NavigateUrl="~/Book.aspx" Text="Book" Value="Book" />
-                    <asp:MenuItem NavigateUrl="~/BookCopy.aspx" Text="BookCopy" Value="BookCopy" />
-                    <asp:MenuItem NavigateUrl="~/Author.aspx" Text="Author" Value="Author" />
-                    <asp:MenuItem NavigateUrl="~/Library.aspx" Text="Library" Value="Library" />
-                    <asp:MenuItem NavigateUrl="~/Patron.aspx" Text="Patron" Value="Patron" />
-                </Items>
-                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
-                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <StaticSelectedStyle BackColor="#5D7B9D" />
-            </asp:Menu>
-        </header>
-        <div>
-            <asp:ContentPlaceHolder ID="Main" runat="server">
-            </asp:ContentPlaceHolder>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <div class="container-fluid">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Default.aspx">Home </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Book.aspx">Book</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="BookCopy.aspx">BookCopy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Library.aspx">Library</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Author.aspx">Author</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Patron.aspx">Patron</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Librarian.aspx">Librarian</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Borrowed.aspx">Borrowed</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+       
+            </header>
+            <div>
+                <asp:ContentPlaceHolder ID="Main" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
+
     </form>
 </body>
 </html>

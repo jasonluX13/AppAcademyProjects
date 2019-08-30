@@ -128,7 +128,6 @@ namespace Library.Controls
                 new SqlParameter("@FirstName", firstName),
                 new SqlParameter("@LastName", lastName));
             authorId = dt.Rows[0].Field<int>("Id");
-            TitleLabel.Text += authorId;
         }
     }
 

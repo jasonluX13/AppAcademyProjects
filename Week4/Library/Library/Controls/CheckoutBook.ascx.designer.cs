@@ -10,7 +10,7 @@
 namespace Library.Controls {
     
     
-    public partial class BookAddEdit {
+    public partial class CheckoutBook {
         
         /// <summary>
         /// AddOrEdit control.
@@ -28,7 +28,16 @@ namespace Library.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Title;
+        protected global::System.Web.UI.WebControls.Label Title;
+        
+        /// <summary>
+        /// Author control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Author;
         
         /// <summary>
         /// ISBN control.
@@ -37,33 +46,51 @@ namespace Library.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ISBN;
+        protected global::System.Web.UI.WebControls.Label ISBN;
         
         /// <summary>
-        /// Authors control.
+        /// Library control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Authors;
+        protected global::System.Web.UI.WebControls.Label Library;
         
         /// <summary>
-        /// Button1 control.
+        /// PatronsLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label PatronsLabel;
         
         /// <summary>
-        /// Button2 control.
+        /// Patrons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.DropDownList Patrons;
+        
+        /// <summary>
+        /// Checkout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Checkout;
+        
+        /// <summary>
+        /// Cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancel;
     }
 }

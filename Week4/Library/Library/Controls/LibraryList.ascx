@@ -7,7 +7,8 @@
 
 <asp:Repeater ID="Libraries" runat="server" ItemType="DataRow">
     <HeaderTemplate>
-        <table>
+        <table class="table">
+            <thead>
             <tr>
                 <th>Branch Name</th>
                 <th>Address</th>
@@ -15,6 +16,8 @@
                 <th>Zipcode</th>
                 <th>&nbsp;</th>
             </tr>
+            </thead>
+            <tbody>
     </HeaderTemplate>
     <ItemTemplate>
         <tr>
@@ -23,10 +26,10 @@
             <td><%# Item.Field<string>("State") %> </td>
             <td><%# Item.Field<string>("Zipcode") %> </td>
             <td>
-                <asp:HyperLink runat="server" NavigateUrl='<%# $"~/EditLibrary.aspx?ID={Item.Field<int>("Id")}" %>' Text="Edit" /></td>
+                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/EditLibrary.aspx?ID={Item.Field<int>("Id")}" %>' Text="Edit" /></td>
         </tr>
     </ItemTemplate>
     <FooterTemplate>
-        </table>
+        </tbody></table>
     </FooterTemplate>
 </asp:Repeater>

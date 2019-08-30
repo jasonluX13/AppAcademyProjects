@@ -22,15 +22,6 @@ namespace Library.Controls {
         protected global::System.Web.UI.WebControls.Label AddOrEdit;
         
         /// <summary>
-        /// FirstNameLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FirstNameLabel;
-        
-        /// <summary>
         /// FirstName control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace Library.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FirstName;
-        
-        /// <summary>
-        /// LastNameLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LastNameLabel;
         
         /// <summary>
         /// LastName control.
