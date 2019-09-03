@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E29E13D3-82F6-4125-94E6-DCD4CC1F5DEF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library</RootNamespace>
+    <AssemblyName>Library</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Library.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddBook.aspx" />
+    <Content Include="AddLibrary.aspx" />
+    <Content Include="AddPatron.aspx" />
+    <Content Include="App_Themes\Theme1\Theme1.css" />
+    <Content Include="Author.aspx" />
+    <Content Include="AuthorAdd.aspx" />
+    <Content Include="AuthorEdit.aspx" />
+    <Content Include="Book.aspx" />
+    <Content Include="BookCopies.aspx" />
+    <Content Include="BookCopy.aspx" />
+    <Content Include="BookEdit.aspx" />
+    <Content Include="Borrowed.aspx" />
+    <Content Include="CheckoutBook.aspx" />
+    <Content Include="Controls\AuthorAddEdit.ascx" />
+    <Content Include="Controls\AuthorList.ascx" />
+    <Content Include="Controls\BookAddEdit.ascx" />
+    <Content Include="Controls\BookCopies.ascx" />
+    <Content Include="Controls\BookCopyAddEdit.ascx" />
+    <Content Include="Controls\BookCopyList.ascx" />
+    <Content Include="Controls\BookList.ascx" />
+    <Content Include="Controls\BorrowedList.ascx" />
+    <Content Include="Controls\CheckoutBook.ascx" />
+    <Content Include="Controls\LibrarianAddEdit.ascx" />
+    <Content Include="Controls\LibrarianList.ascx" />
+    <Content Include="Controls\LibraryAddEdit.ascx" />
+    <Content Include="Controls\LibraryList.ascx" />
+    <Content Include="Controls\PatronAddEdit.ascx" />
+    <Content Include="Controls\PatronList.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EditBookCopy.aspx" />
+    <Content Include="EditLibrarian.aspx" />
+    <Content Include="EditLibrary.aspx" />
+    <Content Include="EditPatron.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Librarian.aspx" />
+    <Content Include="Library.aspx" />
+    <Content Include="Patron.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddLibrary.aspx.cs">
+      <DependentUpon>AddLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddLibrary.aspx.designer.cs">
+      <DependentUpon>AddLibrary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPatron.aspx.cs">
+      <DependentUpon>AddPatron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPatron.aspx.designer.cs">
+      <DependentUpon>AddPatron.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Author.aspx.cs">
+      <DependentUpon>Author.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Author.aspx.designer.cs">
+      <DependentUpon>Author.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorAdd.aspx.cs">
+      <DependentUpon>AuthorAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorAdd.aspx.designer.cs">
+      <DependentUpon>AuthorAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorEdit.aspx.cs">
+      <DependentUpon>AuthorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorEdit.aspx.designer.cs">
+      <DependentUpon>AuthorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Book.aspx.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Book.aspx.designer.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookCopies.aspx.cs">
+      <DependentUpon>BookCopies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookCopies.aspx.designer.cs">
+      <DependentUpon>BookCopies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookCopy.aspx.cs">
+      <DependentUpon>BookCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookCopy.aspx.designer.cs">
+      <DependentUpon>BookCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookEdit.aspx.cs">
+      <DependentUpon>BookEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookEdit.aspx.designer.cs">
+      <DependentUpon>BookEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Borrowed.aspx.cs">
+      <DependentUpon>Borrowed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Borrowed.aspx.designer.cs">
+      <DependentUpon>Borrowed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutBook.aspx.cs">
+      <DependentUpon>CheckoutBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutBook.aspx.designer.cs">
+      <DependentUpon>CheckoutBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AuthorAddEdit.ascx.cs">
+      <DependentUpon>AuthorAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AuthorAddEdit.ascx.designer.cs">
+      <DependentUpon>AuthorAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AuthorList.ascx.cs">
+      <DependentUpon>AuthorList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AuthorList.ascx.designer.cs">
+      <DependentUpon>AuthorList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BookAddEdit.ascx.cs">
+      <DependentUpon>BookAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BookAddEdit.ascx.designer.cs">
+      <DependentUpon>BookAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BookCopies.ascx.cs">
+      <DependentUpon>BookCopies.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BookCopies.ascx.designer.cs">
+      <DependentUpon>BookCopies.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BookCopyAddEdit.ascx.cs">
+      <DependentUpon>BookCopyAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BookCopyAddEdit.ascx.designer.cs">
+      <DependentUpon>BookCopyAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BookCopyList.ascx.cs">
+      <DependentUpon>BookCopyList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BookCopyList.ascx.designer.cs">
+      <DependentUpon>BookCopyList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BookList.ascx.cs">
+      <DependentUpon>BookList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BookList.ascx.designer.cs">
+      <DependentUpon>BookList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BorrowedList.ascx.cs">
+      <DependentUpon>BorrowedList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BorrowedList.ascx.designer.cs">
+      <DependentUpon>BorrowedList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckoutBook.ascx.cs">
+      <DependentUpon>CheckoutBook.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckoutBook.ascx.designer.cs">
+      <DependentUpon>CheckoutBook.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibrarianAddEdit.ascx.cs">
+      <DependentUpon>LibrarianAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibrarianAddEdit.ascx.designer.cs">
+      <DependentUpon>LibrarianAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibrarianList.ascx.cs">
+      <DependentUpon>LibrarianList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibrarianList.ascx.designer.cs">
+      <DependentUpon>LibrarianList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibraryAddEdit.ascx.cs">
+      <DependentUpon>LibraryAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibraryAddEdit.ascx.designer.cs">
+      <DependentUpon>LibraryAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibraryList.ascx.cs">
+      <DependentUpon>LibraryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LibraryList.ascx.designer.cs">
+      <DependentUpon>LibraryList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PatronAddEdit.ascx.cs">
+      <DependentUpon>PatronAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PatronAddEdit.ascx.designer.cs">
+      <DependentUpon>PatronAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PatronList.ascx.cs">
+      <DependentUpon>PatronList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PatronList.ascx.designer.cs">
+      <DependentUpon>PatronList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditBookCopy.aspx.cs">
+      <DependentUpon>EditBookCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBookCopy.aspx.designer.cs">
+      <DependentUpon>EditBookCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditLibrarian.aspx.cs">
+      <DependentUpon>EditLibrarian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditLibrarian.aspx.designer.cs">
+      <DependentUpon>EditLibrarian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditLibrary.aspx.cs">
+      <DependentUpon>EditLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditLibrary.aspx.designer.cs">
+      <DependentUpon>EditLibrary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPatron.aspx.cs">
+      <DependentUpon>EditPatron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPatron.aspx.designer.cs">
+      <DependentUpon>EditPatron.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian.aspx.cs">
+      <DependentUpon>Librarian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Librarian.aspx.designer.cs">
+      <DependentUpon>Librarian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library.Master.cs">
+      <DependentUpon>Library.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.Master.designer.cs">
+      <DependentUpon>Library.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Patron.aspx.cs">
+      <DependentUpon>Patron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patron.aspx.designer.cs">
+      <DependentUpon>Patron.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53306</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
