@@ -98,26 +98,41 @@ namespace Library.Controls
                 DatabaseHelper.Update(@"
                 update Librarian set
                     LibraryCardNumber = @LibraryCardNumber,
-                    LibraryId = @LibraryId,
-                    Password = @Password
+                    LibraryId = @LibraryId
                 where Id = @LibrarianId
                 ",
                 new SqlParameter("@LibraryCardNumber", patronId),
                 new SqlParameter("@LibrarianId", librarianId),
-                new SqlParameter("@Password", hashedPassword),
                 new SqlParameter("@LibraryId", libraryId));
+
+                DatabaseHelper.Update(@"
+                update Patron set
+                    Password = @Password
+                where LibraryCardNumber = @LibraryCardNumber
+                ",
+                new SqlParameter("@LibraryCardNumber", patronId),
+                new SqlParameter("@Password", hashedPassword));
                 Response.Redirect(LibrarianList);
             }
             else
             {
-                int? id = DatabaseHelper.Insert(@"
-                insert into Librarian (LibraryId, LibraryCardNumber, Password)
-                values (@LibraryId, @LibraryCardNumber, @Password);
+                DatabaseHelper.Insert(@"
+                insert into Librarian (LibraryId, LibraryCardNumber)
+                values (@LibraryId, @LibraryCardNumber);
             ",
               new SqlParameter("@LibraryCardNumber", patronId),
-              new SqlParameter("@LibraryId", libraryId),
-              new SqlParameter("@Password", hashedPassword)
+              new SqlParameter("@LibraryId", libraryId)
               );
+
+                DatabaseHelper.Update(@"
+                update Patron set
+                    Password = @Password,
+                    RoleId = 2
+                where LibraryCardNumber = @LibraryCardNumber
+                ",
+                new SqlParameter("@LibraryCardNumber", patronId),
+                new SqlParameter("@Password", hashedPassword));
+
                 Response.Redirect(Request.RawUrl);
             }
 

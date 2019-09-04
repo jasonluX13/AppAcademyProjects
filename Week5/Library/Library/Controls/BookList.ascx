@@ -2,7 +2,6 @@
 
 <%@ Import Namespace="System.Data" %>
 
-<asp:HyperLink ID="BookAddLink" runat="server" NavigateUrl="~/BookAdd.aspx">Add New Book</asp:HyperLink>
 
 
 <asp:Repeater ID="Books" runat="server" ItemType="DataRow">
@@ -25,7 +24,7 @@
             <td><%# Item.Field<string>("ISBN") %></td>
             <td><%# Item.Field<string>("FirstName") %> <%# Item.Field<string>("LastName") %></td>
             <td>
-                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/BookEdit.aspx?ID={Item.Field<int>("Id")}" %>' Text="Edit" /></td>
+                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/BookEdit.aspx?ID={Item.Field<int>("Id")}" %>' Text="Edit" Visible='<%# CustomUser.IsLibrarian %>'/></td>
             <td>
                 <asp:HyperLink runat="server" class="btn btn-info" NavigateUrl='<%# $"~/BookCopies.aspx?ID={Item.Field<int>("Id")}" %>' Text="View Copies" /></td>
         </tr>

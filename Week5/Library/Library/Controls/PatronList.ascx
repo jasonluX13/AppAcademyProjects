@@ -31,7 +31,7 @@
             <td><%# Item.Field<string>("State") %> </td>
             <td><%# Item.Field<string>("Zipcode") %> </td>
             <td>
-                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/EditPatron.aspx?ID={Item.Field<int>("LibraryCardNumber")}" %>' Text="Edit" /></td>
+                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/EditPatron.aspx?ID={Item.Field<int>("LibraryCardNumber")}" %>' Text="Edit" visible='<%# CustomUser.Identity.Name == Item.Field<int>("LibraryCardNumber").ToString() %>'/></td>
         </tr>
     </ItemTemplate>
     <FooterTemplate>

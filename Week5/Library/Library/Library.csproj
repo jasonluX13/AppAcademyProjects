@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login.aspx" />
+    <Content Include="NotAuthorized.aspx" />
     <Content Include="packages.config" />
     <Content Include="Library.Master" />
     <None Include="Web.Debug.config">
@@ -163,6 +164,9 @@
     <Compile Include="AuthorEdit.aspx.designer.cs">
       <DependentUpon>AuthorEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Book.aspx.cs">
       <DependentUpon>Book.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,6 +222,9 @@
     </Compile>
     <Compile Include="Controls\AuthorList.ascx.designer.cs">
       <DependentUpon>AuthorList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\BookAddEdit.ascx.cs">
       <DependentUpon>BookAddEdit.ascx</DependentUpon>
@@ -310,6 +317,8 @@
     <Compile Include="Controls\PatronList.ascx.designer.cs">
       <DependentUpon>PatronList.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CustomIdentity.cs" />
+    <Compile Include="CustomPrincipal.cs" />
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -377,6 +386,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotAuthorized.aspx.cs">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotAuthorized.aspx.designer.cs">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patron.aspx.cs">
       <DependentUpon>Patron.aspx</DependentUpon>

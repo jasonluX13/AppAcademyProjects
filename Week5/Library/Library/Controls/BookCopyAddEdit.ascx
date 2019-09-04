@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BookCopyAddEdit.ascx.cs" Inherits="Library.Controls.BookCopyAddEdit" %>
 
 
-<fieldset>
+<fieldset id="AddEditForm" runat="server">
     <h1>
         <asp:Label ID="AddOrEdit" runat="server"></asp:Label>
     </h1>

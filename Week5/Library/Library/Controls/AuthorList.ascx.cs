@@ -11,9 +11,14 @@ using System.Web.UI.WebControls;
 
 namespace Library.Controls
 {
-    public partial class AuthorList : System.Web.UI.UserControl
+    public partial class AuthorList : BaseControl
     {
         public string AddAuthorUrl { get; set; }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            AuthorAddLink.Visible = false;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             AuthorAddLink.NavigateUrl = AddAuthorUrl;

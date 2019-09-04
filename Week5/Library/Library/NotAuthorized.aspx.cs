@@ -7,15 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace Library
 {
-    public partial class Librarian : BasePage
+    public partial class NotAuthorized : System.Web.UI.Page
     {
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            if (!CustomUser.IsLibrarian)
-            {
-                Response.Redirect("~/NotAuthorized.aspx");
-            }
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

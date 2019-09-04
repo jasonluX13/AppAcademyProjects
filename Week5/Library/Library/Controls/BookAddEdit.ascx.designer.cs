@@ -13,6 +13,15 @@ namespace Library.Controls {
     public partial class BookAddEdit {
         
         /// <summary>
+        /// AddEditForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AddEditForm;
+        
+        /// <summary>
         /// AddOrEdit control.
         /// </summary>
         /// <remarks>

@@ -43,25 +43,39 @@
                                 <a class="nav-link" href="Patron.aspx">Patron</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Librarian.aspx">Librarian</a>
+                                <asp:HyperLink ID="Librarian" runat="server" CssClass="nav-link" href="Librarian.aspx">Librarian</asp:HyperLink>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Borrowed.aspx">Borrowed</a>
                             </li>
-                            <asp:LoginView runat="server">
-                                <LoggedInTemplate>
-                                    <asp:Button
-                                        CssClass="btn btn-light"
-                                        ID="Logout"
-                                        Text="Logout"
-                                        OnClick="Logout_Click"
-                                        runat="server" />
-                                </LoggedInTemplate>
-                                <AnonymousTemplate>
-                                    <asp:HyperLink CssClass="btn btn-light" Text="Login" NavigateUrl="~/Login.aspx" runat="server" />
-                                </AnonymousTemplate>
-                            </asp:LoginView>
+
                         </ul>
+
+                        <asp:LoginView runat="server">
+                            <LoggedInTemplate>
+                                <ul class="navbar-nav nav-right">
+                                    <li class="nav-item">
+                                        <asp:Label runat="server">Library Card Number: 
+                                            <asp:LoginName runat="server" /> &nbsp
+                                        </asp:Label> 
+                                    </li>
+                                    <li>
+                                        <asp:Button
+                                            CssClass="btn btn-light"
+                                            ID="Logout"
+                                            Text="Logout"
+                                            OnClick="Logout_Click"
+                                            runat="server" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                <ul class="navbar-nav nav-right">
+                                    <asp:HyperLink CssClass="btn btn-light" Text="Login" NavigateUrl="~/Login.aspx" runat="server" />
+                                </ul>
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+
                     </div>
                 </nav>
 

@@ -34,7 +34,10 @@
         <asp:TextBox ID="Zipcode" runat="server" />
     </div>
 
-    
+     <div>
+        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" Text="Password: " />
+        <asp:TextBox ID="Password" runat="server" TextMode="Password"/>
+    </div>
 
 </fieldset>
 

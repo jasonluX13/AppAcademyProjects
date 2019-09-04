@@ -10,12 +10,27 @@ using System.Web.UI.WebControls;
 
 namespace Library.Controls
 {
-    public partial class BookAddEdit : System.Web.UI.UserControl
+    public partial class BookAddEdit : BaseControl
     {
         int bookId = 0;
         int authorId = 0;
         public bool edit { get; set; }
         public string BookList { get; set; }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (!CustomUser.IsLibrarian)
+            {
+                if (edit)
+                {
+                    Response.Redirect("~/NotAuthorized.aspx");
+                }
+                else
+                {
+                    AddEditForm.Visible = false;
+                }
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

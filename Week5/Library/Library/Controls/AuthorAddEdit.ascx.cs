@@ -10,11 +10,19 @@ using System.Web.UI.WebControls;
 
 namespace Library.Controls
 {
-    public partial class AuthorAddEdit : System.Web.UI.UserControl
+    public partial class AuthorAddEdit : BaseControl
     {
         int authorId = 0;
         public bool edit { get; set; }
         public string AuthorList { get; set; }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (!CustomUser.IsLibrarian)
+            {
+                Response.Redirect("~/NotAuthorized.aspx");
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

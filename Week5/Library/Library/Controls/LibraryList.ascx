@@ -26,7 +26,7 @@
             <td><%# Item.Field<string>("State") %> </td>
             <td><%# Item.Field<string>("Zipcode") %> </td>
             <td>
-                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/EditLibrary.aspx?ID={Item.Field<int>("Id")}" %>' Text="Edit" /></td>
+                <asp:HyperLink runat="server" class="btn btn-secondary" NavigateUrl='<%# $"~/EditLibrary.aspx?ID={Item.Field<int>("Id")}" %>' Text="Edit" Visible='<%# CustomUser.IsLibrarian %>'/></td>
         </tr>
     </ItemTemplate>
     <FooterTemplate>

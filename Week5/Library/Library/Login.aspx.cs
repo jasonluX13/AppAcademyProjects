@@ -29,8 +29,9 @@ namespace Library
                 return;
             }
             DataTable dt = DatabaseHelper.Retrieve(@"
-                Select Id, Password From
-                Librarian Where LibraryCardNumber = @LibraryCardNumber
+                Select Password From
+                Patron
+                Where LibraryCardNumber = @LibraryCardNumber
             ", new SqlParameter("@LibraryCardNumber", libraryCardNumber)); 
             if (dt.Rows.Count == 0)
             {

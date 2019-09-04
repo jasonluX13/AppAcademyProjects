@@ -9,12 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace Library.Controls
 {
-    public partial class BookList : System.Web.UI.UserControl
+    public partial class BookList : BaseControl
     {
-        public string AddBookUrl { get; set; }
+    
         protected void Page_Load(object sender, EventArgs e)
         {
-            BookAddLink.NavigateUrl = AddBookUrl;
+           
             if (!IsPostBack)
             {
                 DataTable dt = DatabaseHelper.Retrieve(@"

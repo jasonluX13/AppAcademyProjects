@@ -63,6 +63,8 @@ namespace Library.Controls
             string address = Address.Text;
             string zipcode = Zipcode.Text;
             string state = State.Text;
+            string password = Password.Text;
+            string hashedPassword = Hashing.HashPassword(password);
 
             if (edit)
             {
@@ -73,7 +75,8 @@ namespace Library.Controls
                         Email = @Email,
                         Address = @Address,
                         Zipcode = @Zipcode,
-                        State = @State
+                        State = @State,
+                        Password = @Password
                     where LibraryCardNumber = @PatronId
                 ",
                 new SqlParameter("@FirstName", firstName),
@@ -82,19 +85,21 @@ namespace Library.Controls
                 new SqlParameter("@Address", address),
                 new SqlParameter("@PatronId", patronId),
                 new SqlParameter("@State", state),
+                new SqlParameter("@Password", hashedPassword),
                 new SqlParameter("@Zipcode", zipcode));
             }
             else
             {
-                int? id = DatabaseHelper.Insert(@"
-                insert into Patron (FirstName, LastName, Email, Address, Zipcode, State)
-                values (@FirstName, @LastName, @Email, @Address, @Zipcode, @State);
+                DatabaseHelper.Insert(@"
+                insert into Patron (FirstName, LastName, Email, Address, Zipcode, State, Password, RoleId)
+                values (@FirstName, @LastName, @Email, @Address, @Zipcode, @State, @Password, 1);
             ",
               new SqlParameter("@FirstName", firstName),
               new SqlParameter("@LastName", lastName),
               new SqlParameter("@Email", email),
               new SqlParameter("@Zipcode", zipcode),
               new SqlParameter("@State", state),
+              new SqlParameter("@Password", hashedPassword),
               new SqlParameter("@Address", address));
 
             }

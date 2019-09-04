@@ -16,11 +16,11 @@ namespace Library
         {
             int libraryCardNumber = int.Parse(User.Identity.Name);
             DataTable dt = DatabaseHelper.Retrieve(@"
-                Select FirstName + ' ' + LastName as LibName
-                From Librarian join Patron on Librarian.LibraryCardNumber = Patron.LibraryCardNumber
-                Where Librarian.LibraryCardNumber = @LibraryCardNumber
+                Select FirstName + ' ' + LastName as Name
+                From Patron 
+                Where LibraryCardNumber = @LibraryCardNumber
                 ", new SqlParameter("@LibraryCardNumber", libraryCardNumber));
-            string name = dt.Rows[0].Field<string>("LibName");
+            string name = dt.Rows[0].Field<string>("Name");
             Welcome.Text = "Welcome to the library, " + name;
         }
     }
