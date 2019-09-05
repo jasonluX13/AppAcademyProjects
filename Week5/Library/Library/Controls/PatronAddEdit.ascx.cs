@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Library.Controls
 {
-    public partial class PatronAddEdit : System.Web.UI.UserControl
+    public partial class PatronAddEdit : BaseControl
     {
         int patronId = 0;
         public bool edit { get; set; }
