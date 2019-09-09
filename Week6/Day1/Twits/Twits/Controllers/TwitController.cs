@@ -84,8 +84,13 @@ namespace Twits.Controllers
 
 
         // GET: Twit/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+
+            }
             string connectionString = ConfigurationManager.ConnectionStrings["TwitDatabase"].ConnectionString;
             Twit twit = new Twit();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -143,8 +148,12 @@ namespace Twits.Controllers
         }
 
         // GET: Twit/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
 
