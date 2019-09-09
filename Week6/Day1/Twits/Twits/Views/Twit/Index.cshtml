@@ -1,0 +1,29 @@
+﻿@model IList<Twits.Models.Twit>
+
+
+<p>There are @Model.Count twits to read</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Text</th>
+            <th>CreatedOn</th>
+            <th>&nbsp</th>
+            <th>&nbsp</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var twit in Model)
+        {
+            <tr>
+                <td>@twit.Text</td>
+                <td>@twit.CreatedOn</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Twit", new { id = twit.Id }, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Twit", new { id = twit.Id }, new { @class = "btn btn-primary" })</td>
+               
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<p>@Html.ActionLink("Create a Twit", "Create")</p>
