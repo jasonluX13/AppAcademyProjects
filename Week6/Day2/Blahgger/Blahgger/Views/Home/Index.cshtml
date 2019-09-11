@@ -1,0 +1,36 @@
+﻿@model List<Blahgger.Models.Post>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+<div>
+    @using (Html.BeginForm("Logout", "Account"))
+    {
+        <button class="btn btn-default" type="submit">Logout</button>
+    }
+</div>
+<p>Welcome @ViewBag.CurrentUserEmail!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Posts</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var post in Model)
+        {
+            <tr>
+                <td>
+                    <p>@post.Text</p>
+                    Created on: @post.CreatedOn By: @post.CreatorName
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
