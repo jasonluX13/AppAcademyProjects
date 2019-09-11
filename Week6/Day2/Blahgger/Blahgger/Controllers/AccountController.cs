@@ -22,7 +22,7 @@ namespace Blahgger.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(User user)
+        public ActionResult Login(LoginUser user)
         {
             if (ModelState.IsValidField("Email") && ModelState.IsValidField("Password"))
             {
@@ -106,20 +106,41 @@ namespace Blahgger.Controllers
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-
                     ModelState.AddModelError("", "Email has already been used");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Email has already been used");
+                    //Hash password
+                    user.HashedPassword = Hashing.HashPassword(user.Password);
+                    //Add account to database
+                    AddUser(user);
+
+                    //Redirect to login
+                    return RedirectToAction("Login");
                 }
 
             }
-            //Add account to database
-
-            //Redirect to login
-
             return View();
+        }
+
+        private void AddUser(User user)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = @"
+                Insert into [User]  (FirstName, LastName, Email, HashedPassword)
+                values (@FirstName, @LastName, @Email, @HashedPassword)
+                        
+            ";
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@FirstName", user.FirstName);
+                command.Parameters.AddWithValue("@LastName", user.LastName);
+                command.Parameters.AddWithValue("@Email", user.Email);
+                command.Parameters.AddWithValue("@HashedPassword", user.HashedPassword);
+
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

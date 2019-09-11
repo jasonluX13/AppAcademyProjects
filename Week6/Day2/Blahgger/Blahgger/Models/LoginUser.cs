@@ -6,13 +6,14 @@ using System.Web;
 
 namespace Blahgger.Models
 {
-    public class Post
+    public class LoginUser
     {
         public int Id { get; set; }
         [Required]
-        public string Text { get; set; }
-        public DateTimeOffset CreatedOn { get; set; }
-        public int CreatorId { get; set; }
-        public string CreatorName { get; set; }
+        public string Email { get; set; }
+
+        // TODO Hmm... should this property go on this model???
+        [Required]
+        public string Password { get; set; }
     }
 }

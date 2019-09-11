@@ -13,6 +13,7 @@
 </div>
 <p>Welcome @ViewBag.CurrentUserEmail!</p>
 
+@Html.ActionLink("AddPost", "Create", "Post")
 <table class="table">
     <thead>
         <tr>
@@ -28,6 +29,7 @@
                 <td>
                     <p>@post.Text</p>
                     Created on: @post.CreatedOn By: @post.CreatorName
+                    @Html.ActionLink("Details", "Details/" + @post.Id, "Post")
                 </td>
             </tr>
         }

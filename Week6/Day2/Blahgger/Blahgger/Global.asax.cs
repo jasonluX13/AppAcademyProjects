@@ -17,5 +17,7 @@ namespace Blahgger
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        
     }
 }

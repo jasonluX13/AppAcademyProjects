@@ -13,8 +13,10 @@ namespace Blahgger.Models
         public string Email { get; set; }
         public string HashedPassword { get; set; }
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         // TODO Hmm... should this property go on this model???

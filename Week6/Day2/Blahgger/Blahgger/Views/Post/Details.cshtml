@@ -1,0 +1,62 @@
+﻿@model Blahgger.Models.DisplayPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.CreatedOn)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.CreatorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.CreatorName)
+        </dd>
+
+    </dl>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var comment in Model.Comments)
+        {
+            <tr>
+                <td>
+                    <p>@comment.Text</p>
+                    <i>Created on: @comment.CreatedOn By: @comment.CreatorName </i>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Post.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
