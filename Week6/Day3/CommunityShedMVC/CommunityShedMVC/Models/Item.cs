@@ -6,13 +6,17 @@ using System.Web;
 
 namespace CommunityShedMVC.Models
 {
-    public class Community
+    public class Item
     {
         public int Id { get; set; }
-        [Display(Name="Community Name")]
         [Required]
-        public string CommunityName { get; set; }
-        public bool Open { get; set; }
+        public string ItemName { get; set; }
         public int OwnerId { get; set; }
+        [Required]
+        public string Usage { get; set; }
+        [Required]
+        public string Warning { get; set; }
+        [Required]
+        public string Age { get; set; }
     }
 }

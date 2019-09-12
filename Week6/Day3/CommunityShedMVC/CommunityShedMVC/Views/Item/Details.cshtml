@@ -1,0 +1,49 @@
+﻿@model CommunityShedMVC.ViewModels.DisplayCommunityDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h1>Community Name: @Model.Community.CommunityName</h1>
+    <h2>Owner: @Model.OwnerName</h2>
+</div>
+
+@Html.ActionLink("Add Item", "AddItem", null, new { @class = "btn btn-primary"})
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Usage</th>
+            <th>Warning</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+            {
+            <tr>
+                <td>
+                    @item.ItemName
+                </td>
+                <td>
+                    @item.Usage
+                </td>
+                <td>
+                    @item.Warning
+                </td>
+                <td>
+                    @item.Age
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+
+    @Html.ActionLink("Back to List", "Index", "Home")
+</p>

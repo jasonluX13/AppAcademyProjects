@@ -7,7 +7,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Communities</th>
+            <th>My Communities</th>
             <th>Open/Closed</th>
             <th>Details</th>
             <th>Members</th>
@@ -24,7 +24,7 @@
                     @(community.Open ? "Open" : "Closed")
                 </td>
                 <td>
-                    
+                    @Html.ActionLink("Details", "Details",  "Item", new { CommunityId = @community.Id }, new { @class="btn btn-primary"})
                 </td>
                 <td>
 
@@ -36,4 +36,4 @@
 
 @Html.ActionLink("Add Community", "AddCommunity", null,  new { @class = "btn btn-primary" })
 
-@Html.ActionLink("Join Community", "JoinCommunity", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Join Community", "CommunityDetails", null, new { @class = "btn btn-primary" })
