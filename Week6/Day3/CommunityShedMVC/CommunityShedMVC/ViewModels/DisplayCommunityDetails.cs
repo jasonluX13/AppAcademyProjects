@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CommunityShedMVC.ViewModels
 {
-    public class DisplayCommunityDetails
+    public class DisplayCommunityDetails : BaseViewModel
     {
         public Community Community { get; set; }
         public List<Item> Items { get; set; }

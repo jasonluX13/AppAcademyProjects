@@ -118,6 +118,11 @@
     <Content Include="Views\Home\AlreadyJoined.cshtml" />
     <Content Include="Views\Item\Details.cshtml" />
     <Content Include="Views\Item\AddItem.cshtml" />
+    <Content Include="Views\Item\EditItem.cshtml" />
+    <Content Include="Views\Item\Borrow.cshtml" />
+    <Content Include="Views\Item\BorrowedItems.cshtml" />
+    <Content Include="Views\Item\Return.cshtml" />
+    <Content Include="Views\Item\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -128,6 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Borrowed.cs" />
     <Compile Include="Models\Community.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Person.cs" />
@@ -135,9 +141,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\CustomIdentity.cs" />
     <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisplayCommunityDetails.cs" />
+    <Compile Include="ViewModels\JoinCommunity.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\ViewBorrowed.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

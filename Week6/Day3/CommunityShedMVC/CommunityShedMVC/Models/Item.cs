@@ -18,5 +18,8 @@ namespace CommunityShedMVC.Models
         public string Warning { get; set; }
         [Required]
         public string Age { get; set; }
+        public int CommunityId { get; set; }
+        public bool Borrowed { get; set; }
+
     }
 }

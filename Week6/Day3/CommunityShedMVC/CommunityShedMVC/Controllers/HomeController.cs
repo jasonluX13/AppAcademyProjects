@@ -42,8 +42,10 @@ namespace CommunityShedMVC.Controllers
                 select Id, CommunityName, [Open], OwnerId 
                 from Community 
             ");
+            JoinCommunity viewModel = new JoinCommunity();
+            viewModel.Communities = communities;
 
-            return View(communities);
+            return View(viewModel);
         }
 
         

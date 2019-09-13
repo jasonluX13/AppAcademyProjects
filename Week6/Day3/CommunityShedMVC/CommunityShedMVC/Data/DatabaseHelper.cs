@@ -55,7 +55,10 @@ namespace CommunityShedMVC.Data
                             if (property.CanWrite && dataReaderColumnNames.Contains(propertyName))
                             {
                                 object value = dr[propertyName];
-                                property.SetValue(model, value);
+                                if (value != DBNull.Value)
+                                {
+                                    property.SetValue(model, value);
+                                }
                             }
                         }
 
@@ -105,7 +108,10 @@ namespace CommunityShedMVC.Data
                             if (property.CanWrite && dataReaderColumnNames.Contains(propertyName))
                             {
                                 object value = dr[propertyName];
-                                property.SetValue(model, value);
+                                if (value != DBNull.Value)
+                                {
+                                    property.SetValue(model, value);
+                                }
                             }
                         }
                     }
@@ -192,8 +198,8 @@ namespace CommunityShedMVC.Data
             // Append a query to the passed in insert query
             // to get the last inserted ID primary key value.
             sql += @"
-                select cast(scope_identity() as int) as 'id';
-            ";
+            select cast(scope_identity() as int) as 'id';
+        ";
 
             int? id = null;
 
@@ -241,5 +247,6 @@ namespace CommunityShedMVC.Data
             return ConfigurationManager.ConnectionStrings[ConnectionStringName].ConnectionString;
         }
     }
+
 
 }

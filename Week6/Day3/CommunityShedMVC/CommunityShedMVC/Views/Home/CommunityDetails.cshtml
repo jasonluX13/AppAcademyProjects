@@ -1,4 +1,4 @@
-﻿@model List<CommunityShedMVC.Models.Community>
+﻿@model CommunityShedMVC.ViewModels.JoinCommunity
 @{
     ViewBag.Title = "Community Details";
 }
@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var community in Model)
+        @foreach (var community in Model.Communities)
         {
             <tr>
                 <td>
@@ -23,7 +23,7 @@
                     @(community.Open ? "Open" : "Closed")
                 </td>
                 <td>
-                    @if (community.Open)
+                    @if (community.Open && !Model.CustomUser.IsInRole(community.Id, "Member"))
                     {
                         @Html.ActionLink("Join", "JoinCommunity", new { @communityid = community.Id }, new { @class = "btn btn-warning" })
                       

@@ -19,6 +19,9 @@
             <th>Usage</th>
             <th>Warning</th>
             <th>Age</th>
+            <th>&nbsp</th>
+            <th>Availability</th>
+            <th>&nbsp</th>
         </tr>
     </thead>
     <tbody>
@@ -36,6 +39,30 @@
                 </td>
                 <td>
                     @item.Age
+                </td>
+                <td>
+                    @if (item.OwnerId == Model.CustomUser.Person.Id
+                        || Model.CustomUser.IsInRole(Model.Community.Id, "Reviewer"))
+                    {
+                        @Html.ActionLink("Edit Item", "EditItem", "Item", new { communityId = Model.Community.Id, id = item.Id }, new { @class = "btn btn-success" })
+                    }
+                   
+                </td>
+                <td>
+                    @if (!item.Borrowed)
+                    {
+                        @Html.ActionLink("Borrow Item", "Borrow", new { id = item.Id }, new { @class = "btn btn-success"})
+                    }
+                    else
+                    {
+                        <b>Not Available</b>
+                    }
+                </td>
+                <td>
+                    @if(Model.CustomUser.Person.Id == item.OwnerId || Model.CustomUser.IsInRole(Model.Community.Id, "Reviewer"))
+                    {
+                        @Html.ActionLink("Remove Item", "Delete", new { communityid=Model.Community.Id, id = item.Id }, new { @class = "btn btn-danger" })
+                    }
                 </td>
 
             </tr>
