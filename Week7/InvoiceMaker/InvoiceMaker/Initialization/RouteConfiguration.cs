@@ -12,14 +12,15 @@ namespace InvoiceMaker.Initialization
         public static void AddRoutes(RouteCollection routes)
         {
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new
-                {
-                    controller = "Invoices",
-                    action = "Index",
-                    id = UrlParameter.Optional
-                });
+              name: "Default",
+              url: "{controller}/{action}/{id}",
+              defaults: new
+              {
+                  controller = "Invoices",
+                  action = "Index",
+                  id = UrlParameter.Optional
+              }
+            );
         }
     }
 }

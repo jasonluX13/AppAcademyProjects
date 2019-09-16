@@ -18,13 +18,13 @@ namespace InvoiceMaker
         {
             InvoiceMakerApplication ima = (InvoiceMakerApplication)sender;
             string path = ima.Context.Request.Path;
-            if (path.Substring(0, 10) == "/api/hash/")
+            if (path.StartsWith("/api/hash/"))
             {
                 string text = path.Substring(10);
                 text += ".hash";
                 ima.Context.RewritePath(text);
             }
-            else if (path.Substring(0,13) == "/api/binhash/")
+            else if (path.StartsWith("/api/binhash/"))
             {
                 string text = path.Substring(13);
                 text += ".binhash";

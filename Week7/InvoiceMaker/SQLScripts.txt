@@ -1,0 +1,22 @@
+CREATE TABLE Client (
+  Id INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+  ClientName NVARCHAR(255) NOT NULL UNIQUE,
+  IsActivated BIT NOT NULL
+)
+GO
+
+CREATE TABLE WorkType (
+	Id INT Identity(1,1) not null primary key,
+	WorkName nvarchar(255) not null unique,
+	Rate decimal(18,2) not null 
+
+)
+
+CREATE TABLE FeeLineItem (
+	Id INT Identity(1,1) not null primary key,
+	[Description] nvarchar(255) not null,
+	Amount decimal(18,2) not null,
+	[When] datetimeoffset(7) not null 
+
+)
+
