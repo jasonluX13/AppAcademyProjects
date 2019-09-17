@@ -42,7 +42,76 @@ namespace InvoiceMaker.Repositories
             }
             return clients;
         }
+        public void Insert(Client client)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
 
+                string sql = @"
+                  INSERT INTO Client(ClientName, IsActivated)
+                  VALUES
+                  (@clientName, @isActivated)
+                ";
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@clientName", client.Name);
+                command.Parameters.AddWithValue("@isActivated", client.IsActive);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void Update(Client client)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                string sql = @"
+                  UPDATE Client
+                  SET ClientName = @clientName
+                    , IsActivated = @isActivated
+                  WHERE Id = @id
+                ";
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@clientName", client.Name);
+                command.Parameters.AddWithValue("@isActivated", client.IsActive);
+                command.Parameters.AddWithValue("@id", client.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public Client GetById(int id)
+        {
+            Client client;
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                string sql = @"
+                  SELECT Id, ClientName, IsActivated
+                  FROM Client
+                  WHERE Id = @Id
+                  ORDER BY ClientName
+                ";
+                 
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@Id", id);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    int clientId = reader.GetInt32(0);
+                    string name = reader.GetString(1);
+                    bool isActivated = reader.GetBoolean(2);
+                    client = new Client(id, name, isActivated);
+                    return client;
+                }
+               
+                
+            }
+            return null;
+
+        }
         private string _connectionString;
     }
 }

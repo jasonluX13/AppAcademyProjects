@@ -1,0 +1,32 @@
+﻿@model List<InvoiceMaker.Models.WorkType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Work Types</h2>
+
+@Html.ActionLink("Create", "Create", null, new { @class = "pure-button pure-button-primary" })
+
+<table class="pure-table pure-table-bordered pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Rate ($/hr)</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var workType in Model)
+        {
+            <tr>
+                <td>@workType.Name</td>
+                <td>@workType.Rate</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = workType.Id }, new { @class = "button-secondary pure-button" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
