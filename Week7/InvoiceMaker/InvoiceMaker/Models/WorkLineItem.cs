@@ -7,10 +7,12 @@ namespace InvoiceMaker.Models
 {
     public class WorkLineItem : ILineItem
     {
-        public WorkLineItem(WorkDone workDone)
+        public WorkLineItem(int id, WorkDone workDone)
         {
+            this.Id = id;
             this.workDone = workDone;
         }
+        public int Id { get; set; }
         public decimal Amount
         {
             get

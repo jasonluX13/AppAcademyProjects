@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="~/Content/PureStyle.css">
 </head>
 <body>
-    @RenderBody()
+
+    <div class="pure-menu pure-menu-horizontal">
+        <a href="#" class="pure-menu-heading pure-menu-link white">Invoice Maker</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item">@Html.ActionLink("Clients", "Index", "Clients", null, new { @class = "pure-menu-link white" })</li>
+            <li class="pure-menu-item">@Html.ActionLink("WorkTypes", "Index", "WorkTypes", null, new { @class = "pure-menu-link white" })</li>
+            <li class="pure-menu-item">@Html.ActionLink("WorkDones", "Index", "WorkDone", null, new { @class = "pure-menu-link white" })</li>
+            <li class="pure-menu-item">@Html.ActionLink("WorkLineItems", "Index", "WorkLineItem", null, new { @class = "pure-menu-link white" })</li>
+        </ul>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    
 </body>
 </html>

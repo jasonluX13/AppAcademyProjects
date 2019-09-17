@@ -20,3 +20,10 @@ CREATE TABLE FeeLineItem (
 
 )
 
+CREATE TABLE WorkLineItem (
+	Id INT Identity(1,1) not null primary key,
+	[Description] nvarchar(255) not null,
+	Amount decimal(18,2) not null,
+	[When] datetimeoffset(7) not null,
+	WorkDoneId INT not null Foreign Key References WorkDone(Id) 
+)

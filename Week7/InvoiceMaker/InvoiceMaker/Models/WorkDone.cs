@@ -7,22 +7,25 @@ namespace InvoiceMaker.Models
 {
     public class WorkDone
     {
-        public WorkDone(Client client, WorkType worktype)
+        public WorkDone(int id, Client client, WorkType worktype)
         {
+            this.Id = id;
             this.client = client;
             this.workType = worktype;
             StartedOn = DateTimeOffset.Now;
         }
 
-        public WorkDone(Client client, WorkType worktype, DateTimeOffset startedOn)
+        public WorkDone(int id, Client client, WorkType worktype, DateTimeOffset startedOn)
         {
+            this.Id = id;
             this.client = client;
             this.workType = worktype;
             StartedOn = startedOn;
         }
 
-        public WorkDone(Client client, WorkType worktype, DateTimeOffset startedOn, DateTimeOffset endedOn)
+        public WorkDone(int id, Client client, WorkType worktype, DateTimeOffset startedOn, DateTimeOffset? endedOn)
         {
+            this.Id = id;
             this.client = client;
             this.workType = worktype;
             StartedOn = startedOn;
@@ -55,14 +58,25 @@ namespace InvoiceMaker.Models
         {
             if (EndedOn.HasValue)
             {
-                decimal? hours = (decimal) (EndedOn.Value - StartedOn).TotalHours;
-                return hours * workType.Rate;
+                decimal hours = (decimal) (EndedOn.Value - StartedOn).TotalHours;
+                return decimal.Round(hours * workType.Rate,2);
             }
             return null;
         }
+        
+        public int GetClientId()
+        {
+            return client.Id;
+        } 
+        public int GetWorkTypeId()
+        {
+            return workType.Id;
+        }
+
         private Client client { get; set; }
         private WorkType workType { get; set; }
 
+        public int Id { get; private set; }
         public DateTimeOffset StartedOn { get; private set; }
         public DateTimeOffset? EndedOn { get; private set; }
     }
