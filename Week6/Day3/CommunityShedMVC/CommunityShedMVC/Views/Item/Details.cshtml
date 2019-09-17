@@ -1,0 +1,76 @@
+﻿@model CommunityShedMVC.ViewModels.DisplayCommunityDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h1>Community Name: @Model.Community.CommunityName</h1>
+    <h2>Owner: @Model.OwnerName</h2>
+</div>
+
+@Html.ActionLink("Add Item", "AddItem", null, new { @class = "btn btn-primary"})
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Usage</th>
+            <th>Warning</th>
+            <th>Age</th>
+            <th>&nbsp</th>
+            <th>Availability</th>
+            <th>&nbsp</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+            {
+            <tr>
+                <td>
+                    @item.ItemName
+                </td>
+                <td>
+                    @item.Usage
+                </td>
+                <td>
+                    @item.Warning
+                </td>
+                <td>
+                    @item.Age
+                </td>
+                <td>
+                    @if (item.OwnerId == Model.CustomUser.Person.Id
+                        || Model.CustomUser.IsInRole(Model.Community.Id, "Reviewer"))
+                    {
+                        @Html.ActionLink("Edit Item", "EditItem", "Item", new { communityId = Model.Community.Id, id = item.Id }, new { @class = "btn btn-success" })
+                    }
+                   
+                </td>
+                <td>
+                    @if (!item.Borrowed)
+                    {
+                        @Html.ActionLink("Borrow Item", "Borrow", new { id = item.Id }, new { @class = "btn btn-success"})
+                    }
+                    else
+                    {
+                        <b>Not Available</b>
+                    }
+                </td>
+                <td>
+                    @if(Model.CustomUser.Person.Id == item.OwnerId || Model.CustomUser.IsInRole(Model.Community.Id, "Reviewer"))
+                    {
+                        @Html.ActionLink("Remove Item", "Delete", new { communityid=Model.Community.Id, id = item.Id }, new { @class = "btn btn-danger" })
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+
+    @Html.ActionLink("Back to List", "Index", "Home")
+</p>
