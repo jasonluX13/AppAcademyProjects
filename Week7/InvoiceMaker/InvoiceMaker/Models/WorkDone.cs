@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,10 @@ namespace InvoiceMaker.Models
 {
     public class WorkDone
     {
+        public WorkDone()
+        {
+
+        }
         public WorkDone(int id, Client client, WorkType worktype)
         {
             this.Id = id;
@@ -76,8 +81,8 @@ namespace InvoiceMaker.Models
         private Client client { get; set; }
         private WorkType workType { get; set; }
 
-        public int Id { get; private set; }
-        public DateTimeOffset StartedOn { get; private set; }
-        public DateTimeOffset? EndedOn { get; private set; }
+        public int Id { get; set; }
+        public DateTimeOffset StartedOn { get; set; }
+        public DateTimeOffset? EndedOn { get; set; }
     }
 }

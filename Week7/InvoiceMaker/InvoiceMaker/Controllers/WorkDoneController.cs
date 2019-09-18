@@ -1,4 +1,5 @@
-﻿using InvoiceMaker.FormModels;
+﻿using InvoiceMaker.Data;
+using InvoiceMaker.FormModels;
 using InvoiceMaker.Models;
 using InvoiceMaker.Repositories;
 using System;
@@ -11,6 +12,11 @@ namespace InvoiceMaker.Controllers
 {
     public class WorkDoneController : Controller
     {
+        private Context context;
+        public WorkDoneController()
+        {
+            context = new Context();
+        }
         // GET: WorkDone
         public ActionResult Index()
         {

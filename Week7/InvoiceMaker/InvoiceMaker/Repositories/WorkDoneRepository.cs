@@ -1,7 +1,10 @@
-﻿using InvoiceMaker.Models;
+﻿using InvoiceMaker.Data;
+using InvoiceMaker.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -10,13 +13,24 @@ namespace InvoiceMaker.Repositories
 {
     public class WorkDoneRepository
     {
+        private Context context;
+        private DbSet<Client> clients;
+        private DbSet<WorkType> workTypes;
+
         public WorkDoneRepository()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["InvoiceMaker"].ConnectionString;
         }
+        public WorkDoneRepository(Context context)
+        {
+            this.context = context;
+            clients = context.Clients;
+            workTypes = context.WorkTypes;
+        }
 
         public List<WorkDone> GetAll()
         {
+
             List<WorkDone> workDones = new List<WorkDone>();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
