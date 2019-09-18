@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +9,10 @@ namespace InvoiceMaker.Models
 {
     public class Client
     {
+        public Client()
+        {
+
+        }
         public Client (int id, string name, bool isActive)
         {
             Id = id;
@@ -25,8 +31,10 @@ namespace InvoiceMaker.Models
         }
 
         public int Id { get; set; }
-        public string Name { get; private set; }
-        public bool IsActive { get; private set; }
+        [Required, Column("ClientName"), MaxLength(255)]
+        public string Name { get; set; }
+        [Column("IsActivated")]
+        public bool IsActive { get; set; }
 
     }
 }
