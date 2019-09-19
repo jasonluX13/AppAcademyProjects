@@ -18,6 +18,9 @@ namespace InvoiceMaker.Data
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<WorkType>().Property(wt => wt.Rate).HasPrecision(18, 2);
+
+            //modelBuilder.Entity<WorkDone>()
+            //    .HasRequired(wd => wd.Client)
         }
     }
 }
