@@ -128,6 +128,8 @@
     <Content Include="Views\Invoices\Create.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Invoices\Edit.cshtml" />
+    <Content Include="Views\WorkLineItem\Add.cshtml" />
+    <Content Include="Views\FeeLineItem\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -143,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\FeeLineItemController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\WorkDoneController.cs" />
     <Compile Include="Controllers\WorkLineItemController.cs" />
@@ -150,8 +153,10 @@
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseInitializer.cs" />
     <Compile Include="FormModels\CreateClient.cs" />
+    <Compile Include="FormModels\CreateFeeLineItem.cs" />
     <Compile Include="FormModels\CreateInvoice.cs" />
     <Compile Include="FormModels\CreateWorkDone.cs" />
+    <Compile Include="FormModels\CreateWorkLineItem.cs" />
     <Compile Include="FormModels\CreateWorkType.cs" />
     <Compile Include="FormModels\EditClient.cs" />
     <Compile Include="FormModels\EditInvoice.cs" />
@@ -171,6 +176,7 @@
     <Compile Include="Models\WorkType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\FeeLineItemRepository.cs" />
     <Compile Include="Repositories\InvoiceRepository.cs" />
     <Compile Include="Repositories\WorkDoneRepository.cs" />
     <Compile Include="Repositories\WorkLineItemRepository.cs" />

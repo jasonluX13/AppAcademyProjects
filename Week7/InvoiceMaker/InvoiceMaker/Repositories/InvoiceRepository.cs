@@ -53,5 +53,12 @@ namespace InvoiceMaker.Repositories
             context.SaveChanges();
         }
 
+        public void Update(Invoice invoice)
+        {
+            context.Invoices.Attach(invoice);
+            context.Entry(invoice).State = EntityState.Modified;
+            context.SaveChanges();
+        }
+
     }
 }

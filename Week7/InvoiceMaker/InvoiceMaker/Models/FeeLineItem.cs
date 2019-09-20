@@ -18,9 +18,9 @@ namespace InvoiceMaker.Models
             When = when;
         }
 
-        public decimal Amount { get; private set; }
-        public string Description { get; private set; }     
-        public DateTimeOffset When { get; private set; }
+        public decimal Amount { get; set; }
+        public string Description { get; set; }     
+        public DateTimeOffset When { get; set; }
    
         public int Id { get; set; }
 

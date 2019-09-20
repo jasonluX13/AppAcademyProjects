@@ -42,6 +42,7 @@ namespace InvoiceMaker.Controllers
             {
                 Client client = new ClientRepository(context).GetById(model.ClientId);
                 Invoice newInvoice = new Invoice(model.InvoiceNumber, client);
+                newInvoice.DateCreated = DateTimeOffset.Now;
                 new InvoiceRepository(context).Insert(newInvoice);
                 return RedirectToAction("Index");
             }
@@ -59,6 +60,35 @@ namespace InvoiceMaker.Controllers
             }
             Invoice invoice = new InvoiceRepository(context).GetById((int)id);
             return View(invoice);
+        }
+
+        [HttpPost]
+        public ActionResult Finalize(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return RedirectToAction("Index");
+            }
+            InvoiceRepository repo = new InvoiceRepository(context);
+            Invoice invoice = repo.GetById((int)id);
+            invoice.FinalizeInvoice();
+            repo.Update(invoice);
+            return RedirectToAction("Edit", new { id = id });
+        }
+
+
+        [HttpPost]
+        public ActionResult Close(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return RedirectToAction("Index");
+            }
+            InvoiceRepository repo = new InvoiceRepository(context);
+            Invoice invoice = repo.GetById((int)id);
+            invoice.CloseInvoice();
+            repo.Update(invoice);
+            return RedirectToAction("Edit", new { id = id });
         }
     }
 }

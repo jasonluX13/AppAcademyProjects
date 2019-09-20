@@ -43,26 +43,43 @@ namespace InvoiceMaker.Data
                 Name = "Write proposal",
                 Rate = 15.30M
             };
+            var makeTable = new WorkType()
+            {
+                Name = "Make Table",
+                Rate = 16.30M
+            };
 
             context.WorkTypes.Add(createWebsite);
             context.WorkTypes.Add(writeProposal);
+            context.WorkTypes.Add(makeTable);
+
             context.WorkTypes.Add(new WorkType()
             {
                 Name = "Create Invoice Maker",
                 Rate = 15.00M
             });
 
-            WorkDone bobWebsite = new WorkDone(bob, createWebsite);
+            WorkDone bobWebsite = new WorkDone(bob, createWebsite, DateTimeOffset.Now, DateTimeOffset.Now.AddHours(20));
+            WorkDone bobTable = new WorkDone(bob, makeTable, DateTimeOffset.Now, DateTimeOffset.Now.AddHours(30));
+            bobTable.Finished();
+
             context.WorkDones.Add(bobWebsite);
             context.WorkDones.Add(new WorkDone(companyA, createWebsite));
             context.WorkDones.Add(new WorkDone(companyA, writeProposal));
+            context.WorkDones.Add(bobTable);
 
             WorkLineItem wli = new WorkLineItem()
             {
                 WorkDone = bobWebsite,
                 InvoiceId = 1
             };
+            WorkLineItem wli2 = new WorkLineItem()
+            {
+                WorkDone = bobTable,
+                InvoiceId = 1
+            };
             context.WorkLineItems.Add(wli);
+            context.WorkLineItems.Add(wli2);
 
             Invoice bobInvoice = new Invoice("1234567890", bob);
 

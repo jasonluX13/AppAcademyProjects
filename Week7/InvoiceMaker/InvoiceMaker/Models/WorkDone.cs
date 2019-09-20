@@ -42,6 +42,15 @@ namespace InvoiceMaker.Models
             StartedOn = startedOn;
         }
 
+        public WorkDone(Client client, WorkType worktype, DateTimeOffset startedOn, DateTimeOffset? endedOn)
+        {
+            this.Client = client;
+            this.WorkType = worktype;
+            ClientId = Client.Id;
+            WorkTypeId = WorkType.Id;
+            StartedOn = startedOn;
+            EndedOn = endedOn;
+        }
 
         public WorkDone(int id, Client client, WorkType worktype, DateTimeOffset startedOn, DateTimeOffset? endedOn)
         {
@@ -53,6 +62,7 @@ namespace InvoiceMaker.Models
             StartedOn = startedOn;
             EndedOn = endedOn;
         }
+
 
         public string ClientName {
             get

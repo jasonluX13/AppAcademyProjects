@@ -18,6 +18,7 @@ namespace InvoiceMaker.Models
             LineItems = new List<ILineItem>();
             Status = InvoiceStatus.Open;
             Client = client;
+            DateCreated = DateTimeOffset.Now;
         }
 
         public Invoice(string invoiceNumber, InvoiceStatus status, Client client)
@@ -31,6 +32,7 @@ namespace InvoiceMaker.Models
             if (Status == InvoiceStatus.Open)
             {
                 Status = InvoiceStatus.Finalized;
+                DateFinalized = DateTimeOffset.Now;
             }
         }
 
@@ -39,6 +41,7 @@ namespace InvoiceMaker.Models
             if (Status == InvoiceStatus.Finalized)
             {
                 Status = InvoiceStatus.Closed;
+                DateClosed = DateTimeOffset.Now;
             }
         }
 
@@ -59,6 +62,9 @@ namespace InvoiceMaker.Models
 
         public InvoiceStatus Status { get; set; }
         public string InvoiceNumber { get; set; }
+        public DateTimeOffset DateCreated { get; set; }
+        public DateTimeOffset DateFinalized { get; set; }
+        public DateTimeOffset DateClosed { get; set; }
         public List<ILineItem> LineItems { get; set; }
     }
 }
