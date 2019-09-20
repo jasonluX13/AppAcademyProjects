@@ -7,17 +7,22 @@ namespace InvoiceMaker.Models
 {
     public class WorkLineItem : ILineItem
     {
+        public WorkLineItem()
+        {
+
+        }
+
         public WorkLineItem(int id, WorkDone workDone)
         {
             this.Id = id;
-            this.workDone = workDone;
+            this.WorkDone = workDone;
         }
-        public int Id { get; set; }
+        
         public decimal Amount
         {
             get
             {
-                decimal? total = workDone.GetTotal();
+                decimal? total = WorkDone.GetTotal();
                 if (total.HasValue)
                 {
                     return total.Value;
@@ -28,7 +33,7 @@ namespace InvoiceMaker.Models
         public string Description {
             get
             {
-                return workDone.WorkTypeName;
+                return WorkDone.WorkTypeName;
             }
          }
         public DateTimeOffset When
@@ -36,10 +41,16 @@ namespace InvoiceMaker.Models
             get
             {
 
-                return workDone.StartedOn;
+                return WorkDone.StartedOn;
             }
 
         }
-        private WorkDone workDone { get; set; }
+
+        public int Id { get; set; }
+
+        public int WorkDoneId { get; set; }
+        public WorkDone WorkDone { get; set; }
+
+        public int InvoiceId { get; set; }
     }
 }

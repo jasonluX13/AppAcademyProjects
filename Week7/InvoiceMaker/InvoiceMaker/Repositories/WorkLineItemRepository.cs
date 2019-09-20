@@ -1,45 +1,41 @@
-﻿using InvoiceMaker.Models;
+﻿using InvoiceMaker.Data;
+using InvoiceMaker.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace InvoiceMaker.Repositories
 {
     public class WorkLineItemRepository
     {
+
+        private Context context;
         public WorkLineItemRepository()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["InvoiceMaker"].ConnectionString;
         }
 
+        public WorkLineItemRepository(Context context)
+        {
+            this.context = context;
+        }
+
+        public void Insert(WorkLineItem workLineItem)
+        {
+            context.WorkLineItems.Add(workLineItem);
+            context.SaveChanges();
+        }
+
         public List<WorkLineItem> GetWorkLineItems()
         {
-            List<WorkLineItem> workLineItems = new List<WorkLineItem>();
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-
-                string sql = @"
-                  SELECT Id, WorkDoneId
-                  FROM WorkLineItem
-                  ORDER BY Id
-                ";
-                SqlCommand command = new SqlCommand(sql, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    int id = reader.GetInt32(0);
-                    int workDoneId = reader.GetInt32(1);
-                    WorkDone wd = new WorkDoneRepository().GetById(workDoneId);
-                    WorkLineItem wli = new WorkLineItem(id, wd);
-                    workLineItems.Add(wli);
-                }
-            }
-            return workLineItems;
+            return context.WorkLineItems
+                .Include(wli => wli.WorkDone)
+                .Include(wli => wli.WorkDone.WorkType)
+                .ToList();
         }
 
 

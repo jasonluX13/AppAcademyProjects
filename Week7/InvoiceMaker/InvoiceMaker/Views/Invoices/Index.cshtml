@@ -1,4 +1,32 @@
-﻿
+﻿@model List<InvoiceMaker.Models.Invoice>
+
+
+@Html.ActionLink("Create Invoice", "Create", "Invoices", null, new { @class = "pure-button button-success"})
+
+
+<table class="pure-table pure-table-bordered pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Client Name</th>
+           <th>&nbsp</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var invoice in Model)
+        {
+            <tr>
+                <td>@invoice.InvoiceNumber</td>
+                <td>@invoice.Client.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Invoices", new { id = invoice.Id } , new { @class= "pure-button button-warning"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 
 
 

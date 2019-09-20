@@ -103,6 +103,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Views\Invoices\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\InvoiceMakerLayout.cshtml" />
@@ -117,6 +125,9 @@
     <Content Include="Views\WorkDone\Create.cshtml" />
     <Content Include="Views\WorkDone\Edit.cshtml" />
     <Content Include="Views\WorkLineItem\Index.cshtml" />
+    <Content Include="Views\Invoices\Create.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Invoices\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,11 +148,13 @@
     <Compile Include="Controllers\WorkLineItemController.cs" />
     <Compile Include="Controllers\WorkTypesController.cs" />
     <Compile Include="Data\Context.cs" />
-    <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Data\DatabaseInitializer.cs" />
     <Compile Include="FormModels\CreateClient.cs" />
+    <Compile Include="FormModels\CreateInvoice.cs" />
     <Compile Include="FormModels\CreateWorkDone.cs" />
     <Compile Include="FormModels\CreateWorkType.cs" />
     <Compile Include="FormModels\EditClient.cs" />
+    <Compile Include="FormModels\EditInvoice.cs" />
     <Compile Include="FormModels\EditWorkDone.cs" />
     <Compile Include="FormModels\EditWorkType.cs" />
     <Compile Include="Initialization\RouteConfiguration.cs" />
@@ -158,6 +171,7 @@
     <Compile Include="Models\WorkType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\InvoiceRepository.cs" />
     <Compile Include="Repositories\WorkDoneRepository.cs" />
     <Compile Include="Repositories\WorkLineItemRepository.cs" />
     <Compile Include="Repositories\WorkTypeRepository.cs" />

@@ -7,15 +7,21 @@ namespace InvoiceMaker.Models
 {
     public class Invoice
     {
-        public Invoice(string invoiceNumber)
+        public Invoice()
+        {
+            LineItems = new List<ILineItem>();
+        }
+
+        public Invoice(string invoiceNumber, Client client)
         {
             InvoiceNumber = invoiceNumber;
             LineItems = new List<ILineItem>();
             Status = InvoiceStatus.Open;
+            Client = client;
         }
 
-        public Invoice(string invoiceNumber, InvoiceStatus status)
-            : this(invoiceNumber)
+        public Invoice(string invoiceNumber, InvoiceStatus status, Client client)
+            : this(invoiceNumber, client)
         {
             Status = status;
         }
@@ -46,8 +52,13 @@ namespace InvoiceMaker.Models
             LineItems.Add(new FeeLineItem(description, amount, when));
         }
 
-        public InvoiceStatus Status { get; private set; }
-        public string InvoiceNumber { get; private set; }
-        public List<ILineItem> LineItems { get; private set; }
+        public int Id { get; set; }
+
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
+
+        public InvoiceStatus Status { get; set; }
+        public string InvoiceNumber { get; set; }
+        public List<ILineItem> LineItems { get; set; }
     }
 }

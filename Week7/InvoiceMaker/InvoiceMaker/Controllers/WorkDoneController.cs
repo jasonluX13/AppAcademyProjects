@@ -136,5 +136,20 @@ namespace InvoiceMaker.Controllers
 
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Finish(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return RedirectToAction("Index");
+            }
+            WorkDoneRepository repo = new WorkDoneRepository(context);
+            WorkDone wd = repo.GetById((int)id);
+            wd.Finished();
+            repo.Update(wd);
+            return RedirectToAction("Index");
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using InvoiceMaker.Models;
+﻿using InvoiceMaker.Data;
+using InvoiceMaker.Models;
 using InvoiceMaker.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,20 @@ namespace InvoiceMaker.Controllers
 {
     public class WorkLineItemController : Controller
     {
+        private Context context;
+
+        public WorkLineItemController()
+        {
+            context = new Context();
+        }
         // GET: WorkLineItem
         public ActionResult Index()
         {
-            WorkLineItemRepository repo = new WorkLineItemRepository();
+            WorkLineItemRepository repo = new WorkLineItemRepository(context);
             List<WorkLineItem> workLineItems = repo.GetWorkLineItems();
             return View(workLineItems);
         }
+
+        
     }
 }
