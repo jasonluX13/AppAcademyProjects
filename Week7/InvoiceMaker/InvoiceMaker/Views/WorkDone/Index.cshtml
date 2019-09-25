@@ -1,0 +1,51 @@
+﻿@model List<InvoiceMaker.Models.WorkDone>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>WorkDone</h2>
+
+@Html.ActionLink("Create", "Create", null, new { @class = "pure-button pure-button-primary" })
+
+<table class="pure-table pure-table-bordered pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Work</th>
+            <th>Started On</th>
+            <th>Ended On</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var workDone in Model)
+        {
+            <tr>
+                <td>@workDone.ClientName</td>
+                <td>@workDone.WorkTypeName</td>
+                <td>@workDone.StartedOn</td>
+                <td>
+                    @if (workDone.EndedOn != null)
+                    {
+                        @workDone.EndedOn
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("Finish", "WorkDone", new { id = workDone.Id }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" } ))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="pure-button button-warning">Finish</button>
+                        }
+                    }
+                </td>
+                <td>@workDone.GetTotal()</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = workDone.Id }, new { @class = "button-secondary pure-button" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

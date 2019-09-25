@@ -1,0 +1,66 @@
+﻿@model InvoiceMaker.Models.Invoice
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<h3>Invoice Number: @Model.InvoiceNumber</h3>
+<h3>Client: @Model.Client.Name</h3>
+<h3>Status: @Model.Status.ToString()</h3>
+<h4>Created On: @Model.DateCreated</h4>
+@if (DateTimeOffset.MinValue != Model.DateFinalized)
+{
+    <h4>Finalized On: @Model.DateFinalized</h4>
+}
+@if (DateTimeOffset.MinValue != Model.DateClosed)
+{
+    <h4>Closed On: @Model.DateClosed</h4>
+}
+
+@Html.ActionLink("Add Fee", "Add", "FeeLineItem", new { id = Model.Id }, new { @class = "pure-button button-success"})
+@Html.ActionLink("Add Work", "Add", "WorkLineItem", new { id = Model.Id }, new { @class = "pure-button button-success" })
+
+
+<table class="pure-table pure-table-bordered pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>When</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var lineItem in Model.LineItems)
+        {
+            <tr>
+                <td>@lineItem.Description</td>
+                <td>@lineItem.Amount</td>
+                <td>@lineItem.When</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+@if (Model.Status == InvoiceMaker.Models.InvoiceStatus.Open)
+{
+   
+
+    using (Html.BeginForm("Finalize", "Invoices", new { id = Model.Id }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="pure-button button-warning">Finalize</button>
+    }
+}
+else if (Model.Status == InvoiceMaker.Models.InvoiceStatus.Finalized)
+{
+    using (Html.BeginForm("Close", "Invoices", new { id = Model.Id }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="pure-button button-error">Close</button>
+    }
+}
+
+

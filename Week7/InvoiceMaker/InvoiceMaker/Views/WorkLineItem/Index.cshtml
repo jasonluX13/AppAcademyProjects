@@ -1,0 +1,29 @@
+﻿@model List<InvoiceMaker.Models.WorkLineItem>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Work Line Items</h2>
+
+
+<table class="pure-table pure-table-bordered pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>When</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var workLineItem in Model)
+        {
+            <tr>
+                <td>@workLineItem.Description</td>
+                <td>@workLineItem.Amount</td>
+                <td>@workLineItem.When</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
