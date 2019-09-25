@@ -1,0 +1,37 @@
+﻿@model List<InvoiceMaker.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Clients</h2>
+
+@Html.ActionLink("Create Client", "Create", null, new { @class = "pure-button pure-button-primary" })
+
+<table class="pure-table pure-table-bordered pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Active</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Name</td>
+                <td>
+                    @if (client.IsActive)
+                    {
+                        <span>Yes</span>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = client.Id }, new { @class = "button-secondary pure-button" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

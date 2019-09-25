@@ -1,0 +1,39 @@
+﻿@model List<CommunityShedMVC.Models.Community>
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>My Communities</th>
+            <th>Open/Closed</th>
+            <th>Details</th>
+            <th>Members</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var community in Model)
+        {
+            <tr>
+                <td>
+                    @community.CommunityName
+                </td>
+                <td>
+                    @(community.Open ? "Open" : "Closed")
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details",  "Item", new { CommunityId = @community.Id }, new { @class="btn btn-primary"})
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Add Community", "AddCommunity", null,  new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Join Community", "CommunityDetails", null, new { @class = "btn btn-primary" })

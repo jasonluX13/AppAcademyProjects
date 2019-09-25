@@ -1,0 +1,53 @@
+﻿@model List<CommunityShedMVC.ViewModels.ViewBorrowed>
+@{
+    ViewBag.Title = "BorrowedItems";
+}
+
+<h2>BorrowedItems</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Community Name</th>
+            <th>Date Borrowed</th>
+            <th>Date Due</th>
+            <th>Date Returned</th>
+            <th>Return</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var borrow in Model)
+            {
+            <tr>
+                <td>
+                    @borrow.ItemName
+                </td>
+                <td>
+                    @borrow.CommunityName
+                </td>
+                <td>
+                    @borrow.DateBorrowed
+                </td>
+                <td>
+                    @borrow.DateDue
+                </td>
+                <td>
+                    @if (borrow.DateReturned != null)
+                    {
+                        @borrow.DateReturned
+                    }
+                </td>
+                <td>
+                    @if (borrow.DateReturned == null)
+                    {
+                        @Html.ActionLink("Return", "Return", "Item", new { communityId = borrow.CommunityId, id = borrow.Id }, new { @class = "btn btn-success" })
+                    }                       
+                </td>
+                
+
+            </tr>
+        }
+    </tbody>
+</table>

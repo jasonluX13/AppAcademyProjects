@@ -1,0 +1,36 @@
+﻿@model CommunityShedMVC.ViewModels.JoinCommunity
+@{
+    ViewBag.Title = "Community Details";
+}
+
+<h2>@ViewBag.Title</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Communities</th>
+            <th>Open/Closed</th>
+            <th>&nbsp</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var community in Model.Communities)
+        {
+            <tr>
+                <td>
+                    @community.CommunityName
+                </td>
+                <td>
+                    @(community.Open ? "Open" : "Closed")
+                </td>
+                <td>
+                    @if (community.Open && !Model.CustomUser.IsInRole(community.Id, "Member"))
+                    {
+                        @Html.ActionLink("Join", "JoinCommunity", new { @communityid = community.Id }, new { @class = "btn btn-warning" })
+                      
+                    }
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
